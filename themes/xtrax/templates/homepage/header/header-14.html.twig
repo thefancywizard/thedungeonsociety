@@ -1,0 +1,30 @@
+<header class="site-header header-with-topbar" id="header">
+  <nav class="navbar navbar-expand-lg transparent-bg static-nav darkcolor">
+    <div class="container bg-white position-relative">
+      <a class="navbar-brand pl-2" href="{{ path('<front>') }}">
+        <img src="{{ logo }}" alt="logo" class="logo-default">
+        <img src="{{ logo }}" alt="logo" class="logo-scrolled">
+      </a>
+      {{ page.main_menu }}
+      <!--side menu open button-->
+      <a href="javascript:void(0)" class="d-inline-block sidemenu_btn mr-0" id="sidemenu_toggle">
+        <span class="bg-dark"></span> <span class="bg-dark"></span> <span class="bg-dark"></span>
+      </a>
+    </div>
+  </nav>
+  <!-- side menu -->
+  <div class="side-menu opacity-0 gradient-bg">
+    <div class="overlay"></div>
+    <div class="inner-wrapper">
+      <span class="btn-close btn-close-no-padding" id="btn_sideNavClose"><i></i><i></i></span>
+      <nav class="side-nav w-100">
+        {{ page.side_menu }}
+      </nav>
+      <div class="side-footer w-100">
+        {{ page.inside_menu }}
+      </div>
+    </div>
+  </div>
+  <div id="close_side_menu" class="tooltip"></div>
+  <!-- End side menu -->
+</header>

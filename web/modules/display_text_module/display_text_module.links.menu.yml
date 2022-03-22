@@ -1,0 +1,6 @@
+
+entity.display_text.collection:
+  title: 'Display Texts'
+  parent: system.admin_structure
+  description: 'Create and manage fields, forms, and display settings for your display_text.'
+  route_name: entity.display_text.collection

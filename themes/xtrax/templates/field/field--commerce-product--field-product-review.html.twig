@@ -1,0 +1,12 @@
+{% if comments|length <= 3 %}
+  {% set c_count = 0 %}
+{% else %}
+  {% set c_count = comments|length - 3 %}
+{% endif %}
+{{ comments ? comments }}
+{% if comment_form %}
+  <div class="add-review">
+    <h3 class="heading darkcolor font-light2 bottom25">{{ 'Add Your Review'|t }}<span class="divider-left"></span></h3>
+    {{ comment_form }}
+  </div>
+{% endif %}

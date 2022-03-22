@@ -1,0 +1,10 @@
+<div class="profile_bg bottom30">
+  {{ content.links }}
+  <div class="profile" style="width: 100%">
+    <div class="p_pic">{{ user_picture ? user_picture }}</div>
+    <div class="profile_text">
+      <h5><strong>{{ author|render|striptags }}</strong></h5>
+      <p>{{ content.field_comment_body }}</p>
+    </div>
+  </div>
+</div>

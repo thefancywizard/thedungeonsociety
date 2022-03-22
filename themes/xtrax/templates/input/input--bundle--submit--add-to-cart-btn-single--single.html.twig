@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Default theme implementation for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set classes = ['btn-common', 'gradient-btn'] %}
+<button{{ attributes.addClass(classes).removeClass('button') }}>{{ 'Add to Cart'|t }} <i class="fa fa-cart-plus"></i></button>
+
+
+

@@ -1,0 +1,41 @@
+{% set style = node.field_style.value %}
+{% if style == 'bottom-nav' %}
+  {% include "@xtrax/homepage/header/header-2.html.twig" %}
+{% elseif style == 'center-logo' %}
+  {% include "@xtrax/homepage/header/header-3.html.twig" %}
+{% elseif style == 'classic-startup' %}
+  {% include "@xtrax/homepage/header/header-4.html.twig" %}
+{% elseif style == 'creative' %}
+  {% include "@xtrax/homepage/header/header-5.html.twig" %}
+{% elseif style == 'creative-agency' %}
+  {% include "@xtrax/homepage/header/header-6.html.twig" %}
+{% elseif style == 'design-studio' %}
+  {% include "@xtrax/homepage/header/header-7.html.twig" %}
+{% elseif style == 'flat' %}
+  {% include "@xtrax/homepage/header/header-8.html.twig" %}
+{% elseif style == 'gray' %}
+  {% include "@xtrax/homepage/header/header-9.html.twig" %}
+{% elseif style == 'grey' %}
+  {% include "@xtrax/homepage/header/header-10.html.twig" %}
+{% elseif style == 'innovative' %}
+  {% include "@xtrax/homepage/header/header-11.html.twig" %}
+{% elseif style == 'innovative-classic' %}
+  {% include "@xtrax/homepage/header/header-12.html.twig" %}
+{% elseif style == 'light' %}
+  {% include "@xtrax/homepage/header/header-13.html.twig" %}
+{% elseif style == 'modern-agency' %}
+  {% include "@xtrax/homepage/header/header-14.html.twig" %}
+{% elseif style == 'one-page' %}
+  {% include "@xtrax/homepage/header/header-15.html.twig" %}
+{% elseif style == 'particles' %}
+  {% include "@xtrax/homepage/header/header-16.html.twig" %}
+{% elseif style == 'single-index-bottom-nav' %}
+  {% include "@xtrax/homepage/header/header-17.html.twig" %}
+{% else %}
+  {% include "@xtrax/homepage/header/header-1.html.twig" %}
+{% endif %}
+{{ page.slider }}
+{{ page.highlighted }}
+{{ page.section_content }}
+{{ page.footer_top }}
+{% include "@xtrax/homepage/footer/footer-1.html.twig" %}

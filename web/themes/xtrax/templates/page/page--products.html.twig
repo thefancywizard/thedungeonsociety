@@ -1,0 +1,23 @@
+{% include "@xtrax/header/header-1.html.twig" %}
+<section id="main-banner-page" class="position-relative page-header shop-header section-nav-smooth parallax">
+  <div class="overlay overlay-dark opacity-6 z-index-1"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="page-titles whitecolor text-center padding_top padding_bottom">
+          {{ page.inside_header_background }}
+        </div>
+      </div>
+    </div>
+    {{ page.breadcrumbs }}
+  </div>
+</section>
+<!--Page Header ends -->
+<!--Shopping-->
+<section id="our-shop" class="padding">
+  <div class="container">
+    {{ page.highlighted }}
+    {{ page.content }}
+  </div>
+</section>
+{% include "@xtrax/footer/footer-1.html.twig" %}

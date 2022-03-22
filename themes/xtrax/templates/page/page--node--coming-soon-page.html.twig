@@ -1,0 +1,42 @@
+{% include "@xtrax/header/header-1.html.twig" %}
+<section id="main-banner-page" class="position-relative page-header coming-soon-header parallax section-nav-smooth" style="background-image: url({{ field_bg ? field_bg }}); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center -153.9px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <div class="page-titles whitecolor padding_half">
+          <h1 class="font-light coming-soon-heading">{{ node.title.value }}</h1>
+          <div class="wow bounceIn pt-4 pb-5" data-wow-delay="300ms">
+            <ul class="count_down white alt-font" data-date-time="{{ node.field_date.value|date('m/d/Y H:i:s') }}">
+              <li>
+                <p class="days">00</p>
+                <p class="days_ref">{{ 'days'|t }}</p>
+              </li>
+              <li>
+                <p class="hours">00</p>
+                <p class="hours_ref">{{ 'hours'|t }}</p>
+              </li>
+              <li>
+                <p class="minutes">00</p>
+                <p class="minutes_ref">{{ 'minutes'|t }}</p>
+              </li>
+              <li>
+                <p class="seconds">00</p>
+                <p class="seconds_ref">{{ 'seconds'|t }}</p>
+              </li>
+            </ul>
+          </div>
+          <h3 class="font-light">{{ node.field_description.value }}</h3>
+        </div>
+      </div>
+    </div>
+    {{ page.breadcrumbs }}
+  </div>
+</section>
+<section class="padding_top">
+  <div class="container">
+    {{ page.highlighted }}
+    {{ page.content }}
+  </div>
+</section>
+{{ page.section_content }}
+{% include "@xtrax/footer/footer-1.html.twig" %}

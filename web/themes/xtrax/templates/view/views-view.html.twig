@@ -1,0 +1,410 @@
+{#
+/**
+ * @file
+ * Default theme implementation for main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if id == 'blog' %}
+  {% if display_id == 'sidebar_widget__recent_posts_block' %}
+    {{ rows }}
+  {% elseif display_id == 'section_blog' %}
+    <div class="row">
+      <div class="col-md-12 text-center">
+        {{header}}
+      </div>
+    </div>
+    <div id="blog-measonry" class="cbp">
+      {{rows}}
+    </div>
+  {% elseif display_id == 'block_footer_widget_latest_news' %}
+    <ul class="latest_news whitecolor">
+    {{ rows }}
+    </ul>
+  {% else %}
+    {% if blog_listing_style == 'layout_2' %}
+      {{ rows }}
+      {{ pager }}
+    {% else %}
+      <div id="blog-measonry" class="cbp">
+        {{ rows }}
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          {{ pager }}
+        </div>
+      </div>
+    {% endif %}
+  {% endif %}
+{% elseif id == '_xtrax_taxonomy_terms' %}
+  {% if display_id == 'sidebar_widget__top_tags_block' %}
+    <ul class="webtags">
+      {{ rows }}
+    </ul>
+  {% elseif display_id == 'sidebar_widget__blog_categories_block' %}
+    <ul class="webcats">
+      {{ rows }}
+    </ul>
+  {% elseif display_id == 'block_service_categories_filter' %}
+    <div id="services-filter" class="cbp-l-filters dark bottom40 wow fadeIn d-table mx-auto" data-wow-delay="350ms">
+      {{ header }}
+      {{ rows }}
+    </div>
+  {% elseif display_id == 'block_gallery_categories_filter' %}
+    <div id="mosaic-filter" class="cbp-l-filters bottom30 wow fadeIn text-center" data-wow-delay="350ms">
+      {{ header }}
+      {{ rows }}
+    </div>
+  {% else %}
+    {{ header }}
+    {{ rows }}
+    {{ attachment_after }}
+    {{ empty }}
+    {{ footer }}
+    {{ pager }}
+  {% endif %}
+{% elseif id == '_xtrax_product' %}
+  {% if display_id == 'products' %}
+    <div class="row">
+      <div class="col-md-12 text-center wow fadeIn" data-wow-delay="300ms">
+        {{ header }}
+      </div>
+      {{ rows }}
+      <div class="col-lg-12 col-md-12">
+        {{ pager }}
+      </div>
+    </div>
+  {% else %}
+  {% endif %}
+{% elseif id == '_xtrax_section_content' %}
+  {% if display_id == 'section_team_members_1' %}
+    <div class="row">
+      <div class="col-md-12 text-center heading_space animated wow fadeIn" data-wow-delay="300ms">
+        {{ header }}
+      </div>
+    </div>
+    <div class="row equal-shadow-team">
+      {{ rows }}
+    </div>
+  {% elseif display_id == 'section_team_members_2' %}
+    <div class="row">
+      {{ header }}
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="ourteam-slider" class="owl-carousel">
+          {{ rows }}
+        </div>
+      </div>
+    </div>
+  {% elseif display_id == 'section_testimonial_1' %}
+    <div class="row">
+      <div class="col-md-12 text-center heading_space wow fadeIn" data-wow-delay="300ms">
+        {{ header }}
+      </div>
+    </div>
+    <div id="testimonial-grid" class="cbp mt-n3">
+      {{ rows }}
+    </div>
+  {% elseif display_id == 'section_testimonial_2' %}
+    <div class="row">
+      <div class="col-md-12 text-center animated wow fadeIn" data-wow-delay="300ms">
+        {{ header }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <div id="testimonial-main-slider" class="owl-carousel">
+          {{ rows }}
+        </div>
+      </div>
+    </div>
+  {% elseif display_id == 'section_testimonial_3' %}
+    <div class="parallax page-header testimonial-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 offset-lg-6 col-md-12 text-center text-lg-right">
+            <div class="heading-title wow fadeInUp padding_testi" data-wow-delay="300ms">
+              {{ header }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="owl-carousel" id="testimonial-slider">
+        {{ rows }}
+      </div>
+    </div>
+  {% elseif display_id == 'section_testimonial_4' %}
+    <div class="parallax page-header testimonial-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 offset-lg-6 col-md-12 text-center text-lg-right">
+            <div class="heading-title wow fadeInUp padding_testi" data-wow-delay="300ms">
+              {{ header }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="owl-carousel" id="testimonial-slider">
+        {{ rows }}
+      </div>
+    </div>
+  {% elseif display_id == 'section_partner_1' %}
+    <div class="row">
+      {{ header }}
+      <div class="col-md-12 col-sm-12">
+        <div id="partners-slider" class="owl-carousel">
+          {{ rows }}
+        </div>
+      </div>
+    </div>
+  {% elseif display_id == 'section_services_1' %}
+    <div class="col-md-12 text-center heading_space wow fadeIn" data-wow-delay="300ms">
+      {{ header }}
+    </div>
+    {{ footer }}
+    <div id="services-measonry" class="cbp">
+      {{ rows }}
+    </div>
+  {% elseif display_id == 'section_faqs' %}
+    <div class="row">
+      <div class="col-md-12 text-center animated wow fadeIn" data-wow-delay="300ms">
+        {{ header }}
+      </div>
+      <h2 class="d-none">{{ 'Tabs'|t }}</h2>
+      <div class="col-md-12 col-sm-12">
+        <div id="accordion">
+          {{ rows }}
+        </div>
+      </div>
+    </div>
+  {% elseif display_id == 'section_gallery_1' %}
+    <div class="row">
+      <div class="col-md-12 text-center wow fadeIn top15" data-wow-delay="300ms">
+        {{ header }}
+      </div>
+      <div class="col-lg-12">
+        {{ footer }}
+      </div>
+      <div class="col-lg-12">
+        <div id="grid-mosaic" class="cbp cbp-l-grid-mosaic-flat">
+          {{ rows }}
+        </div>
+        <div class="col-lg-12">
+          {{ pager }}
+        </div>
+      </div>
+    </div>
+  {% else %}
+    {{ header }}
+    {{ rows }}
+    {{ attachment_after }}
+    {{ empty }}
+    {{ footer }}
+    {{ pager }}
+  {% endif %}
+{% elseif id == '_xtrax_sliders' %}
+  {% if display_id == 'slider_1' %}
+    <div id="revo_main_wrapper" class="rev_slider_wrapper fullwidthbanner-container m-0 p-0 bg-dark" data-alias="classic4export" data-source="gallery">
+      <!-- START REVOLUTION SLIDER 5.4.1 fullwidth mode -->
+      <div id="rev_main" class="rev_slider fullwidthabanner white" data-version="5.4.1">
+        <ul>
+          {{ rows }}
+        </ul>
+      </div>
+    </div>
+    {{ footer }}
+  {% elseif display_id == 'slider_2' %}
+    <h2 class="d-none">hidden</h2>
+    <div id="rev_single_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="trax_slider_01">
+      <!-- START REVOLUTION SLIDER 5.4.8.1 fullscreen mode -->
+      <div id="rev_single" class="rev_slider fullwidthabanner" data-version="5.4.8.1">
+        <ul>
+          {{ rows}}
+        </ul>
+      </div>
+      <!-- END REVOLUTION SLIDER -->
+    </div>
+  {% elseif display_id == 'slider_3' %}
+    <h2 class="d-none">heading</h2>
+    <!--Main Slider-->
+    <div id="revo_main_wrapper" class="rev_slider_wrapper">
+      <!-- START REVOLUTION SLIDER 5.4.1 fullwidth mode -->
+      <div id="rev_arrows"  class="rev_slider" data-version="5.4.8.1">
+        <ul>
+          {{ rows }}
+        </ul>
+      </div>
+    </div>
+  {% elseif display_id == 'slider_5' %}
+    <div id="revo_main_wrapper" class="rev_slider_wrapper fullwidthbanner-container m-0 p-0 bg-dark" data-alias="classic4export" data-source="gallery">
+      <!-- START REVOLUTION SLIDER 5.4.1 fullwidth mode -->
+      <div id="rev_creative" class="rev_slider fullwidthabanner white" data-version="5.4.1">
+        <ul>
+          {{rows}}
+        </ul>
+      </div>
+    </div>
+  {% elseif display_id == 'slider_6' %}
+    <div id="revo_main_wrapper" class="rev_slider_wrapper fullwidthbanner-container m-0 p-0 bg-dark" data-alias="classic4export" data-source="gallery">
+      <!-- START REVOLUTION SLIDER 5.4.1 fullwidth mode -->
+      <div id="rev_creative" class="rev_slider fullwidthabanner white" data-version="5.4.1">
+        <ul>
+          {{rows}}
+        </ul>
+      </div>
+    </div>
+  {% elseif display_id == 'slider_7' %}
+    <h2 class="d-none">heading</h2>
+    <!--Main Slider-->
+    <div id="rev_slider_8_1_wrapper" class="rev_slider_wrapper fullscreen-container transparent-bg" data-source="gallery">
+      <!-- START REVOLUTION SLIDER 5.4.8.1 fullscreen mode -->
+      <div id="rev_slider_8_1" class="rev_slider fullscreenbanner" data-version="5.4.8.1">
+        <ul>
+          {{rows}}
+        </ul>
+        <div class="tp-bannertimer" style="height: 5px; background: rgba(0,0,0,0.15);"></div>
+      </div>
+    </div>
+    <!--Main Slider ends -->
+  {% elseif display_id == 'slider_8' %}
+    <h2 class="d-none">hidden</h2>
+    <div id="rev_single_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="trax_slider_01">
+      <!-- START REVOLUTION SLIDER 5.4.8.1 fullscreen mode -->
+      <div id="rev_single" class="rev_slider fullwidthbanner" data-version="5.4.8.1">
+        <ul>
+          {{rows}}
+        </ul>
+      </div>
+      <!-- END REVOLUTION SLIDER -->
+    </div>
+  {% elseif display_id == 'slider_9'  %}
+    <h2 class="d-none">hidden</h2>
+    <div id="rev_single_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="trax_slider_01">
+      <!-- START REVOLUTION SLIDER 5.4.8.1 fullscreen mode -->
+      <div id="rev_single" class="rev_slider fullwidthabanner" data-version="5.4.8.1">
+        <ul>
+          {{rows}}
+        </ul>
+      </div>
+      <!-- END REVOLUTION SLIDER -->
+    </div>
+  {% elseif display_id == 'slider_10' %}
+    <div id="revo_main_wrapper" class="rev_slider_wrapper fullwidthbanner-container m-0 p-0 bg-dark" data-alias="classic4export" data-source="gallery">
+      <!-- START REVOLUTION SLIDER 5.4.1 fullwidth mode -->
+      <div id="rev_main" class="rev_slider fullwidthabanner white" data-version="5.4.1">
+        <ul>
+          {{ rows }}
+        </ul>
+      </div>
+    </div>
+    {{ footer }}
+  {% elseif display_id == 'slider_11' %}
+    <h2 class="d-none">hidden</h2>
+    <div id="rev_single_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="trax_slider_01">
+      <!-- START REVOLUTION SLIDER 5.4.8.1 fullscreen mode -->
+      <div id="rev_single" class="rev_slider fullwidthabanner" data-version="5.4.8.1">
+        <ul>
+          {{rows}}
+        </ul>
+      </div>
+      <!-- END REVOLUTION SLIDER -->
+    </div>
+    <!--scroll down-->
+    {{ footer }}
+  {% elseif display_id == 'slider_12' %}
+    <div id="revo_main_wrapper" class="rev_slider_wrapper fullwidthbanner-container m-0 p-0 bg-dark" data-alias="classic4export" data-source="gallery">
+      <!-- START REVOLUTION SLIDER 5.4.1 fullwidth mode -->
+      <div id="rev_creative" class="rev_slider fullwidthabanner white" data-version="5.4.1">
+        <ul>
+          {{rows}}
+        </ul>
+      </div>
+    </div>
+  {% elseif display_id == 'slider_13' %}
+    <div id="revo_main_wrapper" class="rev_slider_wrapper fullwidthbanner-container m-0 p-0 bg-light" data-alias="classic4export">
+      <!-- START REVOLUTION SLIDER 5.4.1 fullwidth mode -->
+      <div id="rev_main" class="rev_slider fullwidthabanner" data-version="5.4.1">
+        <ul>
+          {{rows}}
+        </ul>
+      </div>
+    </div>
+    {{footer}}
+  {% elseif display_id == 'slider_14' %}
+    <div id="revo_main_wrapper" class="rev_slider_wrapper fullwidthbanner-container m-0 p-0 bg-dark" data-alias="classic4export" data-source="gallery">
+      <!-- START REVOLUTION SLIDER 5.4.1 fullwidth mode -->
+      <div id="vertical-bullets" class="rev_slider fullwidthabanner white vertical-tpb" data-version="5.4.1">
+        <ul>
+          {{rows}}
+        </ul>
+      </div>
+    </div>
+    {{footer}}
+  {% elseif display_id == 'slider_15' %}
+    <h2 class="d-none">heading</h2>
+    <div id="revo_main_wrapper" class="rev_slider_wrapper fullwidthbanner-container">
+      <div id="rev_one_page" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.1">
+        <ul>
+          {{ rows }}
+        </ul>
+      </div>
+    </div>
+  {% elseif display_id == 'slider_17' %}
+    <h2 class="d-none">hidden</h2>
+    <div id="rev_single_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="trax_slider_01">
+      <!-- START REVOLUTION SLIDER 5.4.8.1 fullscreen mode -->
+      <div id="rev_single" class="rev_slider fullwidthabanner" data-version="5.4.8.1">
+        <ul>
+          {{ rows }}
+        </ul>
+      </div>
+      <!-- END REVOLUTION SLIDER -->
+    </div>
+  {% else %}
+    {{ header }}
+    {{ rows }}
+    {{ attachment_after }}
+    {{ empty }}
+    {{ footer }}
+    {{ pager }}
+  {% endif %}
+{% else %}
+	  {{ header }}
+  	{{ rows }}
+  	{{ attachment_after }}
+  	{{ empty }}
+  	{{ footer }}
+  	{{ pager }}
+{% endif %}

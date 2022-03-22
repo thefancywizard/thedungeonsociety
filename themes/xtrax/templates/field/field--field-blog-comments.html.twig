@@ -1,0 +1,20 @@
+{% if comments|length <= 3 %}
+	{% set c_count = 0 %}
+{% else %}
+	{% set c_count = comments|length - 3 %}
+{% endif %}
+
+<div class="profile-authors heading_space mt-3dot75em">
+  <h4 class="text-capitalize darkcolor bottom40">{{ 'Comments'|t }}</h4>
+  {{ comments ? comments }}
+</div>
+{% if comment_form %}
+<div class="post-comment">
+  <div class="text-center text-md-left">
+    <h4 class="text-capitalize darkcolor">{{ 'Add Comment'|t }}</h4>
+    <p class="bottom20 top20"><small class="fas fa-asterisk"></small> {{ 'Your Email address will not be published'|t }}</p>
+    <div class="bottom30">&nbsp;</div>
+  </div>
+  {{ comment_form }}
+</div>
+{% endif %}

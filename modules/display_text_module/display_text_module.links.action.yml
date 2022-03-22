@@ -1,0 +1,6 @@
+
+display_text_module.display_text_add:
+  route_name: display_text_module.display_text_add
+  title: 'Add display_text'
+  appears_on:
+    - entity.display_text.collection

@@ -1,0 +1,40 @@
+
+entity.display_text.canonical:
+  path: '/display_text/{display_text}'
+  defaults:
+    _entity_view: 'display_text'
+    _title: 'display_text content'
+  requirements:
+    _entity_access: 'display_text.view'
+
+entity.display_text.edit_form:
+  path: '/display_text/{display_text}/edit'
+  defaults:
+    _entity_form: display_text.default
+    _title: 'Edit display_text'
+  requirements:
+    _entity_access: 'display_text.update'
+
+entity.display_text.delete_form:
+  path: '/display_text/{display_text}/delete'
+  defaults:
+    _entity_form: display_text.delete
+    _title: 'Delete display_text'
+  requirements:
+    _entity_access: 'display_text.delete'
+
+entity.display_text.collection:
+  path: '/admin/structure/display_texts'
+  defaults:
+    _entity_list: 'display_text'
+    _title: 'Display Texts'
+  requirements:
+    _permission: 'administer display_text entity'
+
+display_text_module.display_text_add:
+  path: '/display_text/add'
+  defaults:
+    _entity_form: display_text.default
+    _title: 'Add display_text'
+  requirements:
+    _entity_create_access: 'display_text'

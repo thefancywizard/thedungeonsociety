@@ -1,0 +1,53 @@
+{% include "@xtrax/header/header-1.html.twig" %}
+{% if v_name == 'tags' or v_name == 'blog_categories' %}
+<section id="main-banner-page" class="position-relative page-header parallax section-nav-smooth" style="background: url({{ blog_background_image }}) no-repeat">
+  <div class="overlay overlay-dark opacity-7 z-index-1"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="page-titles whitecolor text-center padding_top padding_bottom">
+          <h2 class="font-xlight">{{ current_title }}</h2>
+        </div>
+      </div>
+    </div>
+    {{ page.breadcrumbs }}
+  </div>
+</section>
+<section id="ourblog" class="padding">
+  <div class="container">
+    {{ page.highlighted }}
+    <div class="row">
+      <div class="col-lg-8" id="blog">
+        {{ page.content }}
+      </div>
+      <div class="col-lg-4">
+        <aside class="sidebar padding-bottom">
+          {{ page.sidebar }}
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+{% else %}
+  <section id="main-banner-page" class="position-relative page-header about-header parallax section-nav-smooth" style="background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center -153.9px;">
+    <div class="overlay overlay-dark opacity-7"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="page-titles whitecolor text-center padding_top padding_bottom">
+            <h2 class="font-xlight">{{ current_title }}</h2>
+          </div>
+        </div>
+      </div>
+      {{ page.breadcrumbs }}
+    </div>
+  </section>
+  <section class="padding_top padding_bottom">
+    <div class="container">
+      {{ page.highlighted }}
+      {{ page.content }}
+    </div>
+  </section>
+{% endif %}
+{{ page.section_content }}
+{% include "@xtrax/footer/footer-1.html.twig" %}

@@ -1,0 +1,73 @@
+<div class="row">
+  <!-- NOTE: The Id of both of below tags should be same as below-->
+  <!-- shop-dual-carousel -->
+  <div class="col-lg-5 col-md-5 col-sm-12 wow fadeInLeft heading-space" id="shop-dual-carousel" data-wow-delay="20ms" data-wow-duration="1100ms">
+    <!-- syncCarousel -->
+    <div class="owl-carousel carousel-shop-detail owl-theme" id="syncCarousel">
+      {% for i, item in product.field_image['#items'] %}
+        {% set item_image_uri = item.entity.uri.value %}
+        {% set item_image_alt = item.alt %}
+        {% set img_url = file_url(item_image_uri) %}
+        {% set item700x700_url = getUrlByImageStyle(item_image_uri, 'image_700x700') %}
+        <div class="item">
+          <a href="{{ item700x700_url }}" data-fancybox="gallery" title="Zoom In">
+            <img src="{{ item700x700_url }}" alt="{{ product_entity.title.value }}">
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+    <!-- The second carousel will be created dynamically using JS Based upon the items added in upper carousel -->
+  </div>
+  <div class="col-lg-7 col-md-7 col-sm-12 shop_info heading-space wow fadeInRight" data-wow-delay="20ms" data-wow-duration="1100ms">
+    <!--Shop detail-->
+    <h2 class="heading darkcolor font-light2 bottom15">{{ product_entity.title.value }}<span class="divider-left"></span></h2>
+    <h3 class="py-3">{{ product.variation_price }}</h3>
+    <p class="bottom15">{{ product_entity.field_short_description.value }}</p>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <ul style="list-style: disc;" class="pl-3">
+          <li>
+            <p class="my-1"><span>{{ 'Category'|t }} : </span>{{ product.field_category }} </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      {{ product.variations ? product.variations }}
+    </div>
+    <div class="share-on-it">
+      <ul class="social-icons black">
+        <li><span class="pr-2">{{ 'Share At'|t }}: </span></li>
+        <li><a class="facebook" target="_blank" href="https://www.facebook.com/sharer.php?u={{ pageURL }}" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a class="twitter" target="_blank" href="http://twitter.com/share?url={{ pageURL }}&amp;text={{ product_entity.title.value }}" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+        <li><a class="whatsapp" target="_blank" href="https://wa.me/?text={{ pageURL }}" title="Whatsapp"><i class="fab fa-whatsapp"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row top40">
+  <!--Shop detail tabs-->
+  <div class="col-md-12 wow fadeInUp" data-wow-delay="300ms">
+    <div class="tab-to-accordion heading_space">
+      <ul class="tabset-list">
+        <li><a href="#tab1">{{ 'Description'|t }}</a></li>
+        <li class="active"><a href="#tab2">{{ 'Detail'|t }}</a></li>
+        <li><a href="#tab3">{{ 'Review'|t }}</a></li>
+      </ul>
+      <div class="tab-container">
+        <div id="tab1">
+          <p class="pb-3">
+            {{ product_entity.body.summary }}
+          </p>
+        </div>
+        <div id="tab2">
+          {{ product.body }}
+        </div>
+        <div id="tab3">
+          {{ product.field_product_review }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
