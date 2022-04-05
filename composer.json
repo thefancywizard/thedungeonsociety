@@ -44,7 +44,8 @@
         "drupal/php": "^1.1",
         "drupal/quick_node_clone": "^1.14",
         "drush/drush": "^10",
-        "pantheon-upstreams/upstream-configuration": "*"
+        "pantheon-upstreams/upstream-configuration": "*",
+        "thinkshout/mailchimp-api-php": "^2.1"
     },
     "conflict": {
         "drupal/drupal": "*"
