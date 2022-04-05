@@ -1,0 +1,32 @@
+uuid: 5ef739fa-d883-4c76-a4c5-4bf4d7f3b3d2
+langcode: en
+status: false
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group._xtrax_homepage_10_grey_
+  content:
+    - 'block_content:basic:21332790-af0d-4a7d-acea-8ce8e84dd0db'
+  module:
+    - block_content
+    - block_visibility_groups
+  theme:
+    - xtrax
+id: xtraxsectioncontentsimpleservices_3
+theme: xtrax
+region: section_content
+weight: 15
+provider: null
+plugin: 'block_content:21332790-af0d-4a7d-acea-8ce8e84dd0db'
+settings:
+  id: 'block_content:21332790-af0d-4a7d-acea-8ce8e84dd0db'
+  label: '[Xtrax] Section content - Simple services'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: _xtrax_homepage_10_grey_

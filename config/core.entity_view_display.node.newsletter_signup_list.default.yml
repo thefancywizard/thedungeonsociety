@@ -1,0 +1,52 @@
+uuid: a7e5e823-ff74-4eb2-b50b-33bc377c9c8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.newsletter_signup_list.field_newsletter_signup_company
+    - field.field.node.newsletter_signup_list.field_newsletter_signup_email
+    - field.field.node.newsletter_signup_list.field_newsletter_signup_name
+    - node.type.newsletter_signup_list
+  module:
+    - user
+_core:
+  default_config_hash: M18ZwZbbXEjlJja1bwsPngfXf7MO6ZRFq0boSX3LQ-4
+id: node.newsletter_signup_list.default
+targetEntityType: node
+bundle: newsletter_signup_list
+mode: default
+content:
+  extra_field_all_nodes:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -30
+    region: content
+  field_newsletter_signup_company:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_newsletter_signup_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_newsletter_signup_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

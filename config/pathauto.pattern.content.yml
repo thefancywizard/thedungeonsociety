@@ -1,0 +1,32 @@
+uuid: 9a8078d3-c692-4237-a857-e708b0b1c994
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: content
+label: Content
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  a9f86a14-839d-4e7f-9de3-b25e373f583d:
+    id: node_type
+    negate: false
+    uuid: a9f86a14-839d-4e7f-9de3-b25e373f583d
+    context_mapping:
+      node: node
+    bundles:
+      article: article
+      blog_post: blog_post
+      coming_soon_page: coming_soon_page
+      faqs: faqs
+      gallery: gallery
+      homepage: homepage
+      page: page
+      partners: partners
+      services: services
+      team_members: team_members
+      testimonial: testimonial
+selection_logic: and
+weight: -5
+relationships: {  }

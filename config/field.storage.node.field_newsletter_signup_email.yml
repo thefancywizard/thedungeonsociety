@@ -1,0 +1,23 @@
+uuid: e21dce1b-88ea-49a7-b119-680d12c6226c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+  enforced:
+    module:
+      - newslettersignup
+_core:
+  default_config_hash: wdgcxb1t4rpGokmperee8-tK1sjyXvP1q00EE4N_y4Y
+id: node.field_newsletter_signup_email
+field_name: field_newsletter_signup_email
+entity_type: node
+type: email
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,17 @@
+uuid: 81c2d67e-bf93-4104-a86d-7e24c696af40
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_single_product
+label: '[Xtrax] Single product'
+logic: or
+conditions:
+  02ef9e86-83e4-44c2-b680-ce103bab53e4:
+    id: request_path
+    negate: false
+    uuid: 02ef9e86-83e4-44c2-b680-ce103bab53e4
+    context_mapping: {  }
+    pages: '/product/*'
+allow_other_conditions: false

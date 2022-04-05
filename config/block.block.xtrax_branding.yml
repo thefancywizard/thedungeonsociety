@@ -1,0 +1,25 @@
+uuid: 0e78d073-d016-4c7c-952b-2e4960d2dae1
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - xtrax
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: xtrax_branding
+theme: xtrax
+region: hidden
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

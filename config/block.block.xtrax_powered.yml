@@ -1,0 +1,22 @@
+uuid: e13f42a8-b631-41f7-b96d-f8d48867f15f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - xtrax
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: xtrax_powered
+theme: xtrax
+region: hidden
+weight: -3
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

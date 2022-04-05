@@ -1,0 +1,17 @@
+uuid: 770df277-3051-4d71-a9d5-f0a22f49af78
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_homepage_14_modern_agency_
+label: '[Xtrax] Homepage 14 (modern-agency)'
+logic: and
+conditions:
+  6ba05d49-a8dd-4fee-804a-0b67523e086a:
+    id: request_path
+    negate: false
+    uuid: 6ba05d49-a8dd-4fee-804a-0b67523e086a
+    context_mapping: {  }
+    pages: /node/97
+allow_other_conditions: false

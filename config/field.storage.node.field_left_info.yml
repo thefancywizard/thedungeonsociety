@@ -1,0 +1,19 @@
+uuid: 53490308-5801-41e2-852c-0ed4a967e6aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_left_info
+field_name: field_left_info
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,39 @@
+uuid: 21c430bd-7c7a-4b5a-99d2-fb1a2be78da9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group._xtrax_homepage_16_particles_
+  content:
+    - 'block_content:basic:34a3c2c5-ef00-4111-908a-203ab7115d87'
+  module:
+    - block_class
+    - block_content
+    - block_id
+    - block_visibility_groups
+  theme:
+    - xtrax
+third_party_settings:
+  block_class:
+    classes: 'p-0  single-slide'
+  block_id:
+    id: home
+id: xtraxslider16
+theme: xtrax
+region: slider
+weight: 0
+provider: null
+plugin: 'block_content:34a3c2c5-ef00-4111-908a-203ab7115d87'
+settings:
+  id: 'block_content:34a3c2c5-ef00-4111-908a-203ab7115d87'
+  label: '[Xtrax] Slider 16'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: _xtrax_homepage_16_particles_

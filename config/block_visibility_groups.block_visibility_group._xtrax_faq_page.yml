@@ -1,0 +1,17 @@
+uuid: 4a2beb64-ea17-449b-9014-95238456128a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_faq_page
+label: '[Xtrax] FAQ page'
+logic: and
+conditions:
+  ef35d5c3-5155-4a93-a5fa-59bf00a3828c:
+    id: request_path
+    negate: false
+    uuid: ef35d5c3-5155-4a93-a5fa-59bf00a3828c
+    context_mapping: {  }
+    pages: /node/45
+allow_other_conditions: false

@@ -1,0 +1,21 @@
+uuid: 05a7d21f-0d31-409a-a020-7fad2b6172c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_inside_background
+    - node.type.page
+  module:
+    - text
+id: node.page.field_inside_background
+field_name: field_inside_background
+entity_type: node
+bundle: page
+label: 'Inside background'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

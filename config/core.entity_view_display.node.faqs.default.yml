@@ -1,0 +1,41 @@
+uuid: 630a05a2-dbd8-467d-a595-8197cb7844dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.faqs.field_answer
+    - field.field.node.faqs.field_question
+    - node.type.faqs
+  module:
+    - user
+id: node.faqs.default
+targetEntityType: node
+bundle: faqs
+mode: default
+content:
+  extra_field_all_nodes:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -30
+    region: content
+  field_answer:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_question:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

@@ -1,0 +1,26 @@
+uuid: 87bec893-b579-4836-b2dd-8613d3a5ea91
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+  enforced:
+    module:
+      - newslettersignup
+_core:
+  default_config_hash: NM1O_ukSdCGMkWQ9QHG878kt052ern-oKnUQydCx9Vk
+id: node.field_newsletter_signup_company
+field_name: field_newsletter_signup_company
+entity_type: node
+type: string
+settings:
+  max_length: 150
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

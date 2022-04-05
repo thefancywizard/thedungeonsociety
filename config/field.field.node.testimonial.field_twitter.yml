@@ -1,0 +1,19 @@
+uuid: 7855e2cf-78df-464c-84d3-099709c64dc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_twitter
+    - node.type.testimonial
+id: node.testimonial.field_twitter
+field_name: field_twitter
+entity_type: node
+bundle: testimonial
+label: Twitter
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

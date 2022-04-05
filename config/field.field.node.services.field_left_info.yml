@@ -1,0 +1,21 @@
+uuid: 3db97a7f-3289-460c-9d87-a8c4815a40c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_left_info
+    - node.type.services
+  module:
+    - text
+id: node.services.field_left_info
+field_name: field_left_info
+entity_type: node
+bundle: services
+label: 'Left info'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

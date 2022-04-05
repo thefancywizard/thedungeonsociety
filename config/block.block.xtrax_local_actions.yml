@@ -1,0 +1,20 @@
+uuid: 7b5d3681-befa-4c68-80d7-e4a4363f78e8
+langcode: en
+status: true
+dependencies:
+  theme:
+    - xtrax
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: xtrax_local_actions
+theme: xtrax
+region: hidden
+weight: 4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

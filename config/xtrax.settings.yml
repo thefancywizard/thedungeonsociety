@@ -1,0 +1,35 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 1
+  path: 'public://tdsgoldlogo.png'
+favicon:
+  use_default: 0
+  path: 'public://The_Dungeon_Society_Favicon_2.png'
+  mimetype: image/png
+logo_image: /sites/default/files/TDS%20Logo%20Horizontal.png
+logo_image_upload: ''
+logo_image_transparent: /sites/default/files/TDS%20Logo%20Horizontal_0.png
+logo_image_transparent_upload: ''
+enable_demo: 1
+blog_listing_style: layout_2
+blog_description: "<h2 class=\"font-xlight\">Let's Get</h2>\r\n<h2 class=\"font-bold\">The Job Free Income</h2>\r\n<h2 class=\"font-xlight\">With Blog</h2>\r\n<h3 class=\"font-light pt-2\">The Best Multipurpose Template in Market</h3>"
+blog_background_image: /sites/default/files/background_images/bg-blog-detail-header_1.jpg
+blog_background_image_upload: ''
+social_networks: "<li><a href=\"https://www.facebook.com/TheDungeonSociety\"><i class=\"fab fa-facebook-f\"></i> </a> </li>\r\n<li><a href=\"https://twitter.com/Dungeon_Society\"><i class=\"fab fa-twitter\"></i> </a> </li>\r\n<li><a href=\"https://www.instagram.com/thedungeonsociety\"><i class=\"fab fa-instagram\"></i> </a> </li>"
+contact_description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A dolores explicabo laudantium, omnis provident quam reiciendis voluptatum?'
+contact_body: ''
+contact_background_image: /sites/default/files/background_images/bg-contact-header.jpg
+contact_address_info: "<div class=\"heading-title\">\r\n  <span class=\"defaultcolor mb-3\">XTrax Agency Worldwide</span>\r\n  <h2 class=\"darkcolor font-normal mb-4\"><span class=\"d-none d-md-inline-block\">Our</span> Agency Office <span class=\"d-none d-md-inline-block\">In London</span></h2>\r\n</div>\r\n<p class=\"bottom10\">Address: 309, New Cavendish St, EC1Y 3WK</p>\r\n<p class=\"bottom10\">0800 214 5252</p>\r\n<p class=\"bottom10\"><a href=\"mailto:polpo@traxagency.co.au\">polpo@traxagency.co.au</a></p>\r\n<p class=\"bottom10\">Mon-Fri: 9am-5pm</p>\r\n<ul class=\"social-icons mt-4 mb-4 mb-sm-0 wow fadeInUp\" data-wow-delay=\"300ms\" style=\"visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;\">\r\n  <li><a href=\"javascript:void(0)\"><i class=\"fab fa-facebook-f\"></i> </a> </li>\r\n  <li><a href=\"javascript:void(0)\"><i class=\"fab fa-twitter\"></i> </a> </li>\r\n  <li><a href=\"javascript:void(0)\"><i class=\"fab fa-linkedin-in\"></i> </a> </li>\r\n  <li><a href=\"javascript:void(0)\"><i class=\"fab fa-instagram\"></i> </a> </li>\r\n  <li><a href=\"javascript:void(0)\"><i class=\"fab fa-whatsapp\"></i> </a> </li>\r\n  <li><a href=\"javascript:void(0)\"><i class=\"far fa-envelope\"></i> </a> </li>\r\n</ul>"
+contact_subtitle: '<h3 class="font-light py-3">We''d Love To Here From You.</h3>'
+lat: '41.40338'
+lng: '2.17403'
+contact_lat: '40.730610'
+contact_lng: '-73.935242'
+google_api_key: AIzaSyAgIfLQi8KTxTJahilcem6qHusV-V6XXjw
+contact_background_image_upload: ''
+general_setting_tracking_code: ''
+custom_css: ''

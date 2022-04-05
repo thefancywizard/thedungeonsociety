@@ -1,0 +1,66 @@
+uuid: 2496490e-c2ab-4ad4-9313-c8f3c767f7cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.faqs.field_answer
+    - field.field.node.faqs.field_question
+    - node.type.faqs
+  module:
+    - path
+id: node.faqs.default
+targetEntityType: node
+bundle: faqs
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_answer:
+    type: string_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  extra_field_example_custom_submit: true
+  extra_field_example_markup: true
+  field_question: true
+  promote: true
+  sticky: true

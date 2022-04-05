@@ -1,0 +1,17 @@
+uuid: a03b57de-49de-4d6b-823d-804135e38a3d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_coming_soon_page
+label: '[Xtrax] Coming soon page'
+logic: and
+conditions:
+  fe08c4b3-c849-4fac-a5e6-3d3960df7528:
+    id: request_path
+    negate: false
+    uuid: fe08c4b3-c849-4fac-a5e6-3d3960df7528
+    context_mapping: {  }
+    pages: /node/46
+allow_other_conditions: false

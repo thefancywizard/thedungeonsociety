@@ -1,0 +1,39 @@
+uuid: b6caac7a-4296-41ab-8f49-65859e16ad14
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group._xtrax_homepage_11_innovative_
+  content:
+    - 'block_content:basic:dc73bf8a-de8f-438d-a203-5f9b14eee9ef'
+  module:
+    - block_class
+    - block_content
+    - block_id
+    - block_visibility_groups
+  theme:
+    - xtrax
+third_party_settings:
+  block_class:
+    classes: 'padding bgdark'
+  block_id:
+    id: our-process
+id: xtraxsectioncontentourworkprocess2
+theme: xtrax
+region: section_content
+weight: 50
+provider: null
+plugin: 'block_content:dc73bf8a-de8f-438d-a203-5f9b14eee9ef'
+settings:
+  id: 'block_content:dc73bf8a-de8f-438d-a203-5f9b14eee9ef'
+  label: '[Xtrax] Section content - Our Work Process 2'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: _xtrax_homepage_11_innovative_

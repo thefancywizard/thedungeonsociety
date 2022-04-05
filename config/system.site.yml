@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
+langcode: en
+uuid: a06b83e2-5e8c-4d32-983d-5b80aa41ae01
+name: 'The Dungeon Society'
+mail: thefancywizard@gmail.com
+slogan: ''
+page:
+  403: /node/36
+  404: /node/36
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: ''

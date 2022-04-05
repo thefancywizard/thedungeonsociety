@@ -1,0 +1,17 @@
+uuid: bf72fb52-5bc4-4d96-92a4-eba704982837
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_testimonial_page
+label: '[Xtrax] Testimonial page'
+logic: and
+conditions:
+  8ff55bc8-c1ff-465f-9325-d01283e40ae4:
+    id: request_path
+    negate: false
+    uuid: 8ff55bc8-c1ff-465f-9325-d01283e40ae4
+    context_mapping: {  }
+    pages: /node/23
+allow_other_conditions: false

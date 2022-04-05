@@ -1,0 +1,22 @@
+uuid: 4691badb-2681-4bb8-86c4-524dd27d62e7
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - xtrax
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: xtrax_content
+theme: xtrax
+region: content
+weight: -4
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

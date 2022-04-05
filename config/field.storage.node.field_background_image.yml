@@ -1,0 +1,30 @@
+uuid: 91cbcc9d-3536-43c1-b054-5d5b7818d82f
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - node
+id: node.field_background_image
+field_name: field_background_image
+entity_type: node
+type: image
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  default_image:
+    uuid: 8fa24c69-d0d2-4a9a-adc9-c79f1d2c8b02
+    alt: ''
+    title: ''
+    width: 1920
+    height: 724
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

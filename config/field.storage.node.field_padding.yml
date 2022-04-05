@@ -1,0 +1,27 @@
+uuid: 65b9b6c6-b011-47ef-806d-6a9f358c84d8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_padding
+field_name: field_padding
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: padding_top
+      label: 'Padding Top'
+    -
+      value: padding_bottom
+      label: 'Padding Bottom'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

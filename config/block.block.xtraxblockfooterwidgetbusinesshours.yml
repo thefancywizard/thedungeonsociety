@@ -1,0 +1,30 @@
+uuid: 5ff2942f-519f-4cf1-8460-d9da6e5c87ea
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:68b24abb-7a1f-4da9-808a-f0df4fe89010'
+  module:
+    - block_content
+    - block_visibility_groups
+  theme:
+    - xtrax
+id: xtraxblockfooterwidgetbusinesshours
+theme: xtrax
+region: hidden
+weight: 0
+provider: null
+plugin: 'block_content:68b24abb-7a1f-4da9-808a-f0df4fe89010'
+settings:
+  id: 'block_content:68b24abb-7a1f-4da9-808a-f0df4fe89010'
+  label: 'Business hours'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''

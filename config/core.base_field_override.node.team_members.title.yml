@@ -1,0 +1,18 @@
+uuid: fdf6017a-6654-454c-9c04-b8f92d3e489d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.team_members
+id: node.team_members.title
+field_name: title
+entity_type: node
+bundle: team_members
+label: 'Full name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

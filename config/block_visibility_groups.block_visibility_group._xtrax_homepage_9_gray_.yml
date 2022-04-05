@@ -1,0 +1,17 @@
+uuid: 81a53c5b-970b-4151-b18a-cf6fff586591
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_homepage_9_gray_
+label: '[Xtrax] Homepage 9 (Gray)'
+logic: and
+conditions:
+  08e61389-5cd1-45ee-bf77-c6cb936f0a5c:
+    id: request_path
+    negate: false
+    uuid: 08e61389-5cd1-45ee-bf77-c6cb936f0a5c
+    context_mapping: {  }
+    pages: /node/80
+allow_other_conditions: false

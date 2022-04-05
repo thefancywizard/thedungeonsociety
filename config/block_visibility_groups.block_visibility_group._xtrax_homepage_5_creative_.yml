@@ -1,0 +1,17 @@
+uuid: 332556ad-f9d3-44a3-89ad-0fb3584f4be2
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_homepage_5_creative_
+label: '[Xtrax] Homepage 5 (Creative)'
+logic: and
+conditions:
+  f39f9a60-ea45-460f-8cf7-56c5f77c64a2:
+    id: request_path
+    negate: false
+    uuid: f39f9a60-ea45-460f-8cf7-56c5f77c64a2
+    context_mapping: {  }
+    pages: /node/66
+allow_other_conditions: false

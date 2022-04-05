@@ -1,0 +1,36 @@
+uuid: 114415ac-9ea4-46d7-9021-9adbe9e540e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group._xtrax_pricing_page
+  content:
+    - 'block_content:basic:ba656f91-c9b7-4745-b31f-bd1f75220c88'
+  module:
+    - block_class
+    - block_content
+    - block_visibility_groups
+  theme:
+    - xtrax
+third_party_settings:
+  block_class:
+    classes: 'bglight padding'
+id: xtraxsectioncontentallplansincluded
+theme: xtrax
+region: section_content
+weight: 73
+provider: null
+plugin: 'block_content:ba656f91-c9b7-4745-b31f-bd1f75220c88'
+settings:
+  id: 'block_content:ba656f91-c9b7-4745-b31f-bd1f75220c88'
+  label: '[Xtrax] Section content - All Plans Included'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: _xtrax_pricing_page

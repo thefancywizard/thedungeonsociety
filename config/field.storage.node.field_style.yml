@@ -1,0 +1,72 @@
+uuid: 96c911bc-3f04-49c0-8a2f-435a745d6bc4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_style
+field_name: field_style
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: default
+      label: Default
+    -
+      value: bottom-nav
+      label: 'Bottom Nav'
+    -
+      value: center-logo
+      label: 'Center Logo'
+    -
+      value: classic-startup
+      label: 'Classic Startup'
+    -
+      value: creative
+      label: Creative
+    -
+      value: creative-agency
+      label: 'Creative Agency'
+    -
+      value: design-studio
+      label: 'Design Studio'
+    -
+      value: flat
+      label: Flat
+    -
+      value: gray
+      label: Gray
+    -
+      value: grey
+      label: Grey
+    -
+      value: innovative
+      label: Innovative
+    -
+      value: innovative-classic
+      label: 'Innovative Classic'
+    -
+      value: light
+      label: Light
+    -
+      value: modern-agency
+      label: 'Modern Agency'
+    -
+      value: one-page
+      label: 'One page'
+    -
+      value: particles
+      label: Particles
+    -
+      value: single-index-bottom-nav
+      label: 'Single Index bottom Nav'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

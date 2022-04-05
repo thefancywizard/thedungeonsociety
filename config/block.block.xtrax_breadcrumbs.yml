@@ -1,0 +1,22 @@
+uuid: 97fc0db0-08b2-42f6-933d-b8b5e9647bb6
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - xtrax
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: xtrax_breadcrumbs
+theme: xtrax
+region: hidden
+weight: 1
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

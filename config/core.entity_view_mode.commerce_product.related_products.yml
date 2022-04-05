@@ -1,0 +1,10 @@
+uuid: 6638665f-3642-443e-8bed-d307bc15ef20
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.related_products
+label: related_products
+targetEntityType: commerce_product
+cache: true

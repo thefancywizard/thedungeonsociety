@@ -1,0 +1,39 @@
+uuid: 54ef0c3d-990d-4418-87ca-fdd926c5039f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.testimonial.field_avatar
+    - field.field.node.testimonial.field_content
+    - field.field.node.testimonial.field_facebook
+    - field.field.node.testimonial.field_instagram
+    - field.field.node.testimonial.field_job_title
+    - field.field.node.testimonial.field_twitter
+    - field.field.node.testimonial.field_whatsapp
+    - node.type.testimonial
+  module:
+    - user
+id: node.testimonial.teaser
+targetEntityType: node
+bundle: testimonial
+mode: teaser
+content:
+  extra_field_all_nodes:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -30
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_avatar: true
+  field_content: true
+  field_facebook: true
+  field_instagram: true
+  field_job_title: true
+  field_twitter: true
+  field_whatsapp: true

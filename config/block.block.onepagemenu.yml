@@ -1,0 +1,30 @@
+uuid: 2e0a9779-95ca-463c-9398-cb6e24181b88
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.onepage-menu
+  module:
+    - block_visibility_groups
+    - system
+  theme:
+    - xtrax
+id: onepagemenu
+theme: xtrax
+region: one_page_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:onepage-menu'
+settings:
+  id: 'system_menu_block:onepage-menu'
+  label: 'Onepage menu'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''

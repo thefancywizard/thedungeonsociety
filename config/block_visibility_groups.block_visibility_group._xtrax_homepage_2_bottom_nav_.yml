@@ -1,0 +1,17 @@
+uuid: a99c0401-257b-4d8a-9e1e-89eb6fe0a902
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_homepage_2_bottom_nav_
+label: '[Xtrax] Homepage 2 (Bottom Nav)'
+logic: and
+conditions:
+  94abc900-8831-4096-989a-7f672c6fcbae:
+    id: request_path
+    negate: false
+    uuid: 94abc900-8831-4096-989a-7f672c6fcbae
+    context_mapping: {  }
+    pages: /node/59
+allow_other_conditions: false

@@ -1,0 +1,39 @@
+uuid: 7670e0f7-2449-44e9-8a5c-a985dc0fdad7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group._xtrax_homepage_5_creative_
+  content:
+    - 'block_content:basic:02aca893-9183-4672-ba7b-2c789f36c4ea'
+  module:
+    - block_class
+    - block_content
+    - block_id
+    - block_visibility_groups
+  theme:
+    - xtrax
+third_party_settings:
+  block_class:
+    classes: 'padding bg-counters parallax'
+  block_id:
+    id: bg-counters
+id: xtraxsectioncontentcounters_7
+theme: xtrax
+region: section_content
+weight: 56
+provider: null
+plugin: 'block_content:02aca893-9183-4672-ba7b-2c789f36c4ea'
+settings:
+  id: 'block_content:02aca893-9183-4672-ba7b-2c789f36c4ea'
+  label: '[Xtrax] Section content - Counters'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: _xtrax_homepage_5_creative_

@@ -1,0 +1,37 @@
+uuid: 1f7c89c1-7ffe-4b6e-98ae-12af8e92f4c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group._xtrax_homepage_2_bottom_nav_
+    - views.view._xtrax_section_content
+  module:
+    - block_class
+    - block_id
+    - block_visibility_groups
+    - views
+  theme:
+    - xtrax
+third_party_settings:
+  block_class:
+    classes: 'padding_top half-section-alt teams-border'
+  block_id:
+    id: our-team
+id: views_block___xtrax_section_content_section_team_members_2_4
+theme: xtrax
+region: section_content
+weight: 86
+provider: null
+plugin: 'views_block:_xtrax_section_content-section_team_members_2'
+settings:
+  id: 'views_block:_xtrax_section_content-section_team_members_2'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: _xtrax_homepage_2_bottom_nav_

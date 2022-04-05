@@ -1,0 +1,8 @@
+uuid: 1967b182-ce74-42a5-b7bc-36271b2321f1
+langcode: en
+status: true
+dependencies: {  }
+name: 'Gallery tags'
+vid: gallery_tags
+description: ''
+weight: 0

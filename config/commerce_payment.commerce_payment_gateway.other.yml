@@ -1,0 +1,19 @@
+uuid: f1adba99-5abd-4a32-9f23-581f50f2a08c
+langcode: en
+status: true
+dependencies: {  }
+id: other
+label: Other
+weight: null
+plugin: manual
+configuration:
+  display_label: Manual
+  mode: n/a
+  payment_method_types:
+    - credit_card
+  collect_billing_information: true
+  instructions:
+    value: ''
+    format: plain_text
+conditions: {  }
+conditionOperator: AND

@@ -1,0 +1,8 @@
+uuid: c6160d41-87f3-4f66-9e82-284ac0da02fc
+langcode: en
+status: true
+dependencies: {  }
+id: onepage-side-menu
+label: 'Onepage side menu'
+description: ''
+locked: false

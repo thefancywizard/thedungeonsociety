@@ -1,0 +1,17 @@
+uuid: e85d629c-acb1-4b5a-be43-947eeca195be
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_gallery_page
+label: '[Xtrax] Gallery page'
+logic: and
+conditions:
+  501181d9-0afd-44e9-b01a-fbb159baa7f1:
+    id: request_path
+    negate: false
+    uuid: 501181d9-0afd-44e9-b01a-fbb159baa7f1
+    context_mapping: {  }
+    pages: /node/47
+allow_other_conditions: false

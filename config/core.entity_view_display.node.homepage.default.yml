@@ -1,0 +1,18 @@
+uuid: bd485ccf-80d1-4a89-9829-bf8dfcfbe9ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.homepage.field_style
+    - node.type.homepage
+  module:
+    - user
+id: node.homepage.default
+targetEntityType: node
+bundle: homepage
+mode: default
+content: {  }
+hidden:
+  extra_field_all_nodes: true
+  field_style: true
+  links: true

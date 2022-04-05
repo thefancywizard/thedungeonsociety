@@ -1,0 +1,17 @@
+uuid: 8073b0aa-e840-4a0d-9bb4-4cbd322b00f7
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_homepage_1_front_
+label: '[Xtrax] Homepage 1 (Front)'
+logic: and
+conditions:
+  e3599185-dc03-42a0-bee2-c63bd94a9dab:
+    id: request_path
+    negate: false
+    uuid: e3599185-dc03-42a0-bee2-c63bd94a9dab
+    context_mapping: {  }
+    pages: '<front>'
+allow_other_conditions: false

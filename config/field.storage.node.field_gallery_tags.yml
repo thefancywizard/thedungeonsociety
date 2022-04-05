@@ -1,0 +1,20 @@
+uuid: cbc12061-a0fa-45ae-a4b2-f3746b53da4d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_gallery_tags
+field_name: field_gallery_tags
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

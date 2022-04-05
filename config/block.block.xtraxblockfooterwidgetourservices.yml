@@ -1,0 +1,34 @@
+uuid: a665a95c-056d-4d5b-be04-b7679ac3796b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:60ae5278-cf03-4439-88ce-2570ecb28bb4'
+  module:
+    - block_class
+    - block_content
+    - block_visibility_groups
+  theme:
+    - xtrax
+third_party_settings:
+  block_class:
+    classes: 'pl-0 pl-lg-5'
+id: xtraxblockfooterwidgetourservices
+theme: xtrax
+region: hidden
+weight: 0
+provider: null
+plugin: 'block_content:60ae5278-cf03-4439-88ce-2570ecb28bb4'
+settings:
+  id: 'block_content:60ae5278-cf03-4439-88ce-2570ecb28bb4'
+  label: 'Our Services'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''

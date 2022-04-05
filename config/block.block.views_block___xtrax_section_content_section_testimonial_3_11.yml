@@ -1,0 +1,37 @@
+uuid: 00f34b6c-8b8c-492e-b9ac-65a52a752b9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group._xtrax_homepage_11_innovative_classic_
+    - views.view._xtrax_section_content
+  module:
+    - block_class
+    - block_id
+    - block_visibility_groups
+    - views
+  theme:
+    - xtrax
+third_party_settings:
+  block_class:
+    classes: 'bglight padding_bottom'
+  block_id:
+    id: our-testimonial
+id: views_block___xtrax_section_content_section_testimonial_3_11
+theme: xtrax
+region: section_content
+weight: 143
+provider: null
+plugin: 'views_block:_xtrax_section_content-section_testimonial_3'
+settings:
+  id: 'views_block:_xtrax_section_content-section_testimonial_3'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: _xtrax_homepage_11_innovative_classic_

@@ -1,0 +1,22 @@
+uuid: 2ad5b749-d460-4f6d-8022-0b2901de7982
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.coming_soon_page
+id: node.coming_soon_page.promote
+field_name: promote
+entity_type: node
+bundle: coming_soon_page
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

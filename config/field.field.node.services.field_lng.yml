@@ -1,0 +1,19 @@
+uuid: ae8cd996-a7ff-479f-9504-e8cfdb9d2c08
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lng
+    - node.type.services
+id: node.services.field_lng
+field_name: field_lng
+entity_type: node
+bundle: services
+label: Lng
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

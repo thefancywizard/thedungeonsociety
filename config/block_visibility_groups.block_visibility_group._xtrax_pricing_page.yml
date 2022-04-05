@@ -1,0 +1,17 @@
+uuid: bdd97294-411c-4310-9314-faed74e7ae82
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_pricing_page
+label: '[Xtrax] Pricing page'
+logic: and
+conditions:
+  2474a37f-01e1-46ac-92a0-a85929baf11f:
+    id: request_path
+    negate: false
+    uuid: 2474a37f-01e1-46ac-92a0-a85929baf11f
+    context_mapping: {  }
+    pages: /node/34
+allow_other_conditions: false
