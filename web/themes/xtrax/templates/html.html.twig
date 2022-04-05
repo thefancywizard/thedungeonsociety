@@ -20,7 +20,12 @@
 {% elseif field_home_style == 'grey' %}
 <body{{ attributes.addClass('gray') }}>
 {% else %}
-<body{{ attributes }}>
+{%
+  set body_classes = [
+    not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
+  ]
+%}
+<body{{ attributes.addClass(body_classes) }}>
 {% endif %}
 <!--PreLoader-->
 <div class="loader">

@@ -19,8 +19,8 @@
     </div>
   </div>
 {% else %}
-  {% if blog_listing_style == 'layout_2' %}
-    <article class="blog-item heading_space wow fadeIn text-center text-md-left" data-wow-delay="300ms">
+  {% if blog_listing_style == 'layout_33' %}
+    <article class="blog-item cbp-item heading_space wow fadeIn text-center text-md-left" data-wow-delay="300ms">
       {% set image_uri = node.field_image.entity.uri.value %}
       {% set image_alt = node.field_image.entity.alt.value %}
       <div class="image"><img src="{{ getUrlByImageStyle(image_uri, 'image_690x300') }}" alt="{{ node.title.value }}" class="border_radius"></div>
@@ -33,7 +33,7 @@
       <p class="top15">{% if node.body.summary %}{{ node.body.summary|length > 200 ? node.body.summary|slice(0,200) ~ '...' : node.body.summary }}{% endif %}</p>
       <a class=" button btn-primary" href="{{ url }}">Read More</a>
     </article>
-  {% else %}
+  {% elseif blog_listing_style == 'layout_2' %}
     <div class="cbp-item">
       <div class="news_item shadow text-center text-md-left">
         <a class="image" href="{{ url }}">

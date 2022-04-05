@@ -94,7 +94,7 @@ a:hover,
 a:focus {
     outline: none;
     text-decoration: none;
-    color: inherit;
+    color: #fff;
 }
 
 button:focus,
@@ -436,7 +436,16 @@ p {
 }
 
 .defaultcolor {
-    color: #24cdd5;
+    color: #B77729;
+}
+
+#block-views-block-xtrax-section-content-section-team-members-1 {
+    padding-top: 5em;
+}
+
+#block-views-block-xtrax-section-content-section-team-members-1,
+#block-views-block-xtrax-section-content-section-team-members-1 h2 {
+    color: #fff !important;
 }
 
 .container-padding {
@@ -1410,7 +1419,12 @@ section,
 /* ----- Social Icons ----- */
 
 .social-icons-simple {
+    display: none !important;
+}
+
+body.path-frontpage .social-icons-simple {
     margin-top: -3px;
+    display: block !important;
 }
 
 ul.social-icons-simple li,
@@ -2215,6 +2229,7 @@ a.dropdown-toggle::after {
     height: 2px;
     width: 100%;
     display: block;
+    background: #B77729;
 }
 
 .transparent-bg .sidemenu_btn>span {
@@ -2903,12 +2918,43 @@ a.dropdown-toggle::after {
 
 
 /*----- OWl / Revolution ends-----*/
+.nobg {
+    background: none !important;
+    box-shadow: none !important;
+}
+
+.webcats {
+    list-style: none;
+}
+
+.webcats li a::before {
+    display: none !important;
+}
+
+.webcats li a {
+    color: #fff;
+}
 
 #our-feature {
     background: rgb(75,56,76);
     background: linear-gradient(180deg, rgba(75,56,76,1) 35%, rgba(35,14,28,1) 100%);
     color:  #fff;
     padding:  50px 0;
+}
+
+.purple-gradient-bg {
+    background: rgb(75,56,76);
+    background: linear-gradient(180deg, rgba(75,56,76,1) 1%, rgba(35,14,28,1) 20%);
+}
+
+.purple-gradient-bg-long {
+    background: rgb(75,56,76);
+    background: linear-gradient(180deg, rgba(75,56,76,1) 50%, rgba(35,14,28,1) 100%);
+}
+
+#edit-name,
+#edit-mail {
+    color: #fff;
 }
 /*-----Page Headers----- */
 
@@ -3164,6 +3210,10 @@ a.dropdown-toggle::after {
     background: #b77729;
 }
 
+#block-breadcrumbs h3 {
+    color: #240F1C;
+}
+
 .breadcrumb {
     background: transparent;
     padding: 0;
@@ -3172,10 +3222,11 @@ a.dropdown-toggle::after {
 .breadcrumb .breadcrumb-item {
     font-size: 14px;
     position: relative;
+    color: #240F1C;
 }
 
 .breadcrumb-item+.breadcrumb-item::before {
-    color: inherit;
+    color: #240F1C;
 }
 
 .contact-banner iframe {
@@ -4808,7 +4859,7 @@ span.icon-contact {
 /* ----- Our Blog ----- */
 
 .news_item {
-    background: #fff;
+    background: none;
 }
 
 .news_item.shadow {
@@ -4821,16 +4872,20 @@ span.icon-contact {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 .news_desc p{
-    margin-bottom: 0;
+    color: #fff
 }
 #our-blog .news_desc p{
     margin-bottom: 35px;
+}
+#ourblog .news_desc h3 a,
+#ourblog .news_desc h4{
+    color: #B77729 !important;
 }
 #our-blog .news_item{
     margin-bottom: 30px;
 }
 .news_item .news_desc {
-    padding: 40px 30px;
+    padding: 40px 0;
 }
 
 #our-blog .cbp-item:hover img {
@@ -4899,7 +4954,7 @@ ul.rounded li::before{
 .meta-tags li a:focus,
 .commment li a:hover,
 .commment li a:focus {
-    color: #24CDD5;
+    color: #fff;
 }
 .news_item .blog-img{
     position: relative;
@@ -5907,7 +5962,7 @@ form.findus .select:after {
 /*Categories*/
 
 .webcats>li+li {
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .webcats li a::before {
@@ -5927,7 +5982,7 @@ form.findus .select:after {
 
 .webcats li a:hover,
 .webcats li a:focus {
-    color: #24cdd5;
+    color: #fff;
 }
 
 .whitebox .widget {
@@ -6312,7 +6367,11 @@ ul.count_down.white li p:nth-child(2) {
 /*----- Footer -----*/
 
 .footer_logo {
-    width: 90px;
+    width: 100%;
+}
+
+body.path-node section.padding_top.bglight {
+    display: none;
 }
 
 .footer_logo,
@@ -6434,7 +6493,7 @@ ul.latest_news li a:focus,
 .footer_panel p>a:hover,
 .readmorebtn:hover,
 .readmorebtn:focus {
-    color: #24cdd5;
+    color: #fff;
 }
 
 ul.latest_news li span.defaultcolor {

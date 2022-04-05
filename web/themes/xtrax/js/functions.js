@@ -1120,7 +1120,7 @@ jQuery($=> {
                 CubePortfolio
     ====================================== */
     /* ------Blog Masonry----- */
-    $("#blog-measonry").cubeportfolio({
+    $("#blog").cubeportfolio({
         layoutMode: 'grid',
         defaultFilter: '*',
         animationType: "scaleSides",
@@ -1138,7 +1138,7 @@ jQuery($=> {
             cols: 3
         }, {
             width: 768,
-            cols: 3
+            cols: 2
         }, {
             width: 480,
             cols: 1

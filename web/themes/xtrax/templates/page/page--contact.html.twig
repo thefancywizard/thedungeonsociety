@@ -5,8 +5,7 @@
     <div class="row">
       <div class="col-lg-6 offset-lg-3">
         <div class="page-titles whitecolor text-center padding">
-          <h2 class="font-bold"> {{ current_title }}</h2>
-          {{ contact_subtitle ? contact_subtitle|raw }}
+          
         </div>
       </div>
     </div>
@@ -15,17 +14,15 @@
 </section>
 <!--Page Header ends -->
 <!-- Contact US -->
-<section id="stayconnect1" class="bglight position-relative padding noshadow">
-  <div class="container whitebox">
+<section id="stayconnect1" class="purple-gradient-bg-long position-relative padding noshadow">
+  <div class="container noble">
     {{ page.highlighted }}
     <div class="widget py-5">
       <div class="row">
         <div class="col-md-12 text-center wow fadeIn mt-n3" data-wow-delay="300ms">
-          <h2 class="heading bottom30 darkcolor font-light2 pt-1"><span class="font-normal">{{ current_title }}</span>
-            <span class="divider-center"></span>
-          </h2>
+          
           <div class="col-md-8 offset-md-2 bottom35">
-            <p>{{ contact_description ? contact_description }}</p>
+            <p style="color:#fff">{{ contact_description ? contact_description }}</p>
           </div>
         </div>
         <div class="col-md-6 col-sm-6 order-sm-2">
@@ -44,7 +41,7 @@
 </section>
 <!-- Contact US ends -->
 <!-- map -->
-<div class="w-100">
+{#<div class="w-100">
   <div id="map" data-lat="{{ contact_lat }}" data-lng="{{ contact_lng }}" class="full-map" data-theme-url="{{ theme_path }}"></div>
-</div>
+</div>#}
 {% include "@xtrax/footer/footer-1.html.twig" %}

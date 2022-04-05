@@ -1,11 +1,11 @@
 {% include "@xtrax/header/header-1.html.twig" %}
-<section id="main-banner-page" class="position-relative page-header parallax section-nav-smooth" style="background: url({{ field_blog_bg ? field_blog_bg }}) no-repeat">
+<section id="main-banner-page" class="position-relative page-header parallax section-nav-smooth" style="background: url({{ blog_background_image }}) no-repeat">
   <div class="overlay overlay-dark opacity-6 z-index-1"></div>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 offset-lg-2">
         <div class="page-titles whitecolor text-center padding_top padding_bottom">
-          <h2 class="font-xlight">{{ current_title }}</h2>
+          
         </div>
       </div>
     </div>
@@ -13,7 +13,7 @@
   </div>
 </section>
 
-<section id="ourblog" class="bglight padding">
+<section id="ourblog" class="purple-gradient-bg padding">
   <div class="container">
     {{ page.highlighted }}
     <div class="row">

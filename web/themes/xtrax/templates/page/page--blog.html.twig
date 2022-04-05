@@ -13,7 +13,7 @@
   </div>
 </section>
 {% if blog_listing_style == 'layout_2' %}
-  <section id="ourblog" class="padding">
+  <section id="ourblog" class="padding purple-gradient-bg">
     <div class="container">
       <h2 class="d-none">{{ 'Blog'|t }}</h2>
       {{ page.highlighted }}
@@ -32,8 +32,15 @@
 {% else %}
   <section id="our-blog" class="bglight padding">
     <div class="container">
+<div>
       {{ page.highlighted }}
       {{ page.content }}
+</div>
+<div class="col-lg-4">
+          <aside class="sidebar padding-bottom">
+            {{ page.sidebar }}
+          </aside>
+        </div>
     </div>
   </section>
 {% endif %}
