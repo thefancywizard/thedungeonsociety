@@ -3160,6 +3160,10 @@ a.dropdown-toggle::after {
     margin-bottom: -24px;
 }
 
+#block-breadcrumbs {
+    background: #b77729;
+}
+
 .breadcrumb {
     background: transparent;
     padding: 0;
