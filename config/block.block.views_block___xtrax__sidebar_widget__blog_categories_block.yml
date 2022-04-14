@@ -1,0 +1,29 @@
+uuid: de761fda-4d69-429b-9a88-dbcc7f0ca2d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view._xtrax_taxonomy_terms
+  module:
+    - block_visibility_groups
+    - views
+  theme:
+    - xtrax
+id: views_block___xtrax__sidebar_widget__blog_categories_block
+theme: xtrax
+region: sidebar
+weight: 1
+provider: null
+plugin: 'views_block:_xtrax_taxonomy_terms-sidebar_widget__blog_categories_block'
+settings:
+  id: 'views_block:_xtrax_taxonomy_terms-sidebar_widget__blog_categories_block'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''

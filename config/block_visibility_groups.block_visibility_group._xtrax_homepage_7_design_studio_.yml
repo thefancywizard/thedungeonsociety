@@ -1,0 +1,17 @@
+uuid: 06da6484-aaa7-46bf-a74d-1fd7460f6ca1
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_homepage_7_design_studio_
+label: '[Xtrax] Homepage 7 (Design studio)'
+logic: and
+conditions:
+  8ae105a5-ba12-41f0-870c-4d84ecd82749:
+    id: request_path
+    negate: false
+    uuid: 8ae105a5-ba12-41f0-870c-4d84ecd82749
+    context_mapping: {  }
+    pages: /node/74
+allow_other_conditions: false

@@ -1,0 +1,14 @@
+uuid: 83d9891a-bac8-4072-8b34-1e7b71eae46c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: igdv1CXBTq9vh-ONhQ2SFkVhr3bdfRC6nP1Uubdx-L0
+id: default
+label: Default
+traits: {  }
+locked: false
+description: ''
+variationType: default
+multipleVariations: true
+injectVariationFields: true

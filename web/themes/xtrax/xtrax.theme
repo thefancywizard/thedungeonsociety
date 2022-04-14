@@ -1,0 +1,443 @@
+<?php
+
+use Drupal\Core\Asset\AttachedAssetsInterface;
+use Drupal\image\Entity\ImageStyle;
+
+global $product_entity;
+global $r_related_products;
+
+function xtrax_preprocess(&$variables)
+{
+  global $base_url;
+  $variables['theme_path'] = $base_url . '/' . drupal_get_path('theme', 'xtrax');
+  /* Begin blog_listing_style */
+  $blog_listing_style = theme_get_setting('blog_listing_style', 'xtrax');
+  if (isset($blog_listing_style) && !empty($blog_listing_style)) {
+    $variables['blog_listing_style'] = $blog_listing_style;
+  } else {
+    $variables['blog_listing_style'] = 'layout_1';
+  }
+  if (!empty(theme_get_setting('enable_demo', 'xtrax'))) {
+    $enable_demo = theme_get_setting('enable_demo', 'xtrax');
+  } else {
+    $enable_demo = false;
+  }
+  $blog_layout = \Drupal::request()->query->get('layout');
+  if ($enable_demo == true) {
+    if (isset($blog_layout) && !empty($blog_layout)) {
+      if (in_array($blog_layout, ['layout_1', 'layout_2'])) {
+        $variables['blog_listing_style'] = $blog_layout;
+      }
+    }
+  }
+  $variables['blog_background_image'] = $base_url . theme_get_setting('blog_background_image', 'xtrax');
+  /* End blog_listing_style */
+
+  /* Begin header */
+  $variables['social_networks'] = theme_get_setting('social_networks', 'xtrax');
+  /* End Header */
+
+  $pageURL = 'http';
+  if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
+    $pageURL .= "s";
+  }
+  $pageURL .= '://';
+  if ($_SERVER['SERVER_PORT'] != '80') {
+    $pageURL .= $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] . $_SERVER['REQUEST_URI'];
+  } else {
+    $pageURL .= $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+  }
+  $variables['pageURL'] = $pageURL;
+  //contact
+  $variables['contact_address_info'] = theme_get_setting('contact_address_info', 'xtrax');
+  $variables['contact_subtitle'] = theme_get_setting('contact_subtitle', 'xtrax');
+  $variables['contact_description'] = theme_get_setting('contact_description', 'xtrax');
+  $variables['contact_lat'] = theme_get_setting('contact_lat', 'xtrax');
+  $variables['contact_lng'] = theme_get_setting('contact_lng', 'xtrax');
+  $variables['google_api_key'] = theme_get_setting('google_api_key', 'xtrax');
+  $variables['contact_background_image'] = $base_url . theme_get_setting('contact_background_image', 'xtrax');
+
+
+  //current title
+  $request = \Drupal::request();
+  if ($route = $request->attributes->get(\Symfony\Cmf\Component\Routing\RouteObjectInterface::ROUTE_OBJECT)) {
+    $variables['current_title'] = \Drupal::service('title_resolver')->getTitle($request, $route);
+  }
+
+  if (\Drupal::routeMatch()->getParameter('node')) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if (isset($node->field_style) && !empty($node->field_style)) {
+      $variables['field_home_style'] = $node->field_style->value;
+    }
+
+    if (isset($node->field_background_image) && !empty($node->field_background_image)) {
+      $field_image = $node->field_background_image;
+      //kint($field_images);
+      // If a file has been uploaded, get it.
+
+      $first = $field_image->first();
+      if (isset($first) && !empty($first)) {
+
+
+        //kint($image);
+        $path = $first->entity->uri->value;
+        $image_bg = file_create_url($path);
+
+        $variables['field_bg'] = $image_bg;
+
+        // Otherwise get the default if there is one.
+      } else {
+
+        $default_image = $node->field_background_image->getFieldDefinition()->getSetting('default_image');
+        $file = Drupal::service('entity.repository')->loadEntityByUuid('file', $default_image['uuid']);
+        if ($file) {
+          $path = $file->getFileUri();
+          //$variables['background_image'] = ImageStyle::load('img_style_name')->buildUrl($path);
+          $image_bg = file_create_url($path);
+          $variables['field_bg'] = $image_bg;
+        }
+      }
+    }
+
+    if (isset($node->field_blog_background_image) && !empty($node->field_blog_background_image)) {
+      $field_image = $node->field_blog_background_image;
+      //kint($field_images);
+      // If a file has been uploaded, get it.
+
+      $first = $field_image->first();
+      if (isset($first) && !empty($first)) {
+
+
+        //kint($image);
+        $path = $first->entity->uri->value;
+        $image_bg = file_create_url($path);
+
+        $variables['field_blog_bg'] = $image_bg;
+
+        // Otherwise get the default if there is one.
+      } else {
+
+        $default_image = $node->field_blog_background_image->getFieldDefinition()->getSetting('default_image');
+        $file = Drupal::service('entity.repository')->loadEntityByUuid('file', $default_image['uuid']);
+        if ($file) {
+          $path = $file->getFileUri();
+          //$variables['background_image'] = ImageStyle::load('img_style_name')->buildUrl($path);
+          $image_bg = file_create_url($path);
+          $variables['field_blog_bg'] = $image_bg;
+        }
+      }
+    }
+  }
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical') {
+    $term_id = \Drupal::routeMatch()->getRawParameter('taxonomy_term');
+    $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($term_id);
+    $variables['v_name'] = $term->vid->target_id;
+  }
+}
+function revitt_preprocess_html(&$variables)
+{
+  $theme = \Drupal::theme()->getActiveTheme()->getName();
+  $variables['general_setting_tracking_code'] = theme_get_setting('general_setting_tracking_code', $theme);
+  $variables['custom_css'] = theme_get_setting('custom_css', $theme);
+}
+function xtrax_preprocess_commerce_product(array &$variables)
+{
+  global $r_related_products;
+  global $base_url;
+  if (\Drupal::routeMatch()->getParameter('commerce_product')) {
+    $commerce_product = \Drupal::routeMatch()->getParameter('commerce_product');
+    $current_product_id = $commerce_product->product_id->value;
+    $current_product_categories_id = array();
+    foreach ($commerce_product->field_category as $key => $value) {
+      $current_product_categories_id[$key] = $value->target_id;
+    }
+    $storage = \Drupal::entityTypeManager()->getStorage('commerce_product');
+    $pids = $storage->getQuery()
+      //->condition('type', 'default')
+      ->condition('status', 1)
+      ->condition('product_id', $current_product_id, '!=')
+      ->condition('field_category.target_id', $current_product_categories_id, 'in')
+      ->sort('created', 'DESC')
+      ->range(0, 4)
+      ->execute();
+    if ($pids) {
+      $output = [];
+      foreach (\Drupal::entityTypeManager()->getStorage('commerce_product')->loadMultiple($pids) as $key => $pd) {
+        $pd_id = $pd->product_id->value;
+        $options = ['absolute' => TRUE];
+        $url_object = \Drupal\Core\Url::fromRoute('entity.commerce_product.canonical', ['commerce_product' => $pd_id], $options);
+
+        //add to cart
+        $build_addtocart = $pd->variations->view('default');
+        $addtocart_btn = \Drupal::service('renderer')->renderRoot($build_addtocart);
+        $desc = $pd->body->summary;
+
+        $build_product_image = $pd->field_image->view('default');
+        if ($build_product_image['#items'][0]) {
+          $pd_imageone_uri = $build_product_image['#items']->entity->uri->value;
+        } else {
+          $pd_imageone_uri = '';
+        }
+        if (isset($pd_imageone_uri) && !empty($pd_imageone_uri)) {
+          $style = ImageStyle::load('image_400x400');
+          $url = $style->buildUrl($pd_imageone_uri);
+          $pd_imageone_url_image_400x400 = $url;
+
+
+        } else {
+          $pd_imageone_url_image_400x400 = '';
+        }
+
+        //variation price
+        $variations_build = $pd->variations->view('related_products');
+        $variation_price_el = \Drupal::service('renderer')->renderRoot($variations_build);
+        $variation_price_striptags = strip_tags($variation_price_el);
+        $variation_price = $variation_price_striptags;
+        //old price
+        $output[] = '<div class="col-lg-3 col-md-6 col-sm-6 wow fadeIn" data-wow-delay="400ms">
+          <div class="shopping-box top20">
+            <div class="image">
+              <img src="' . ($pd_imageone_url_image_400x400 ? $pd_imageone_url_image_400x400 : '') . '" alt="' . $pd->title->value . '">
+              <div class="overlay primary center-block">
+                ' . ($addtocart_btn ? $addtocart_btn : '') . '
+              </div>
+            </div>
+            <div class="shop-content text-center">
+              <h4 class="darkcolor"><a href="' . $url_object->toString() . '">' . $pd->title->value . '</a></h4>
+              <p>' . (strlen($desc) > 50 ? substr($desc, 0, 50) . '...' : $desc) . '</p>
+              <h4 class="price-product">' . ($variation_price ? $variation_price : '') . '</h4>
+            </div>
+          </div>
+        </div>';
+      }
+      $r_related_products = $output;
+      //$variables['related_products'] = $output;
+      //print render($output[0]);
+    }
+  }
+}
+
+function xtrax_theme_suggestions_html_alter(array &$suggestions, array $variables)
+{
+  if (\Drupal::routeMatch()->getParameter('node')) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    $suggestions[] = 'html__node__' . $node->getType();
+
+  }
+}
+
+function xtrax_theme_suggestions_page_alter(array &$suggestions, array $variables)
+{
+  if (\Drupal::routeMatch()->getParameter('node')) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    $suggestions[] = 'page__node__' . $node->getType();
+    $suggestions[] = 'page__node__' . $node->nid->value;
+  }
+}
+
+function xtrax_preprocess_breadcrumb(&$variables)
+{
+  if (\Drupal::routeMatch()->getParameter('node')) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node->getType() == 'blog_post') {
+      $variables['page_title'] = t('Blog Detail');
+    }
+  }
+}
+
+function xtrax_preprocess_page(&$variables)
+{
+  global $base_url;
+  global $r_related_products;
+  $variables['logo'] = $base_url . theme_get_setting('logo_image', 'xtrax');
+  $variables['logo_transparent'] = $base_url . theme_get_setting('logo_image_transparent', 'xtrax');
+  $variables['related_products'] = $r_related_products;
+}
+
+function xtrax_preprocess_container(&$variables)
+{
+  if (isset($variables['element']['#type'])) {
+    $variables['container_type'] = $variables['element']['#type'];
+  }
+}
+
+function xtrax_preprocess_block(&$variables)
+{
+//  if ($variables['elements']['#plugin_id'] == 'views_block:_xtrax_section_content-section_testimonial_3') {
+//    kint($variables['elements']);
+//  }
+  if (isset($variables['elements']['#id']) && !empty($variables['elements']['#id'])) {
+    $block_id = $variables['elements']['#id'];
+    $block = \Drupal\block\Entity\Block::load($block_id);
+    if ($block->getRegion()) {
+      $region = $block->getRegion();
+      $variables['region'] = $region;
+    }
+    //config as context module
+  } else {
+    $variables['region'] = $variables['elements']['#configuration']['region'];
+  }
+}
+
+function xtrax_preprocess_node(&$variables)
+{
+  if ($variables['node']->getType() == 'blog_post') {
+    $variables['comment_count'] = $variables['node']->get('field_blog_comments')->comment_count;
+  }
+}
+
+function xtrax_theme_suggestions_block_alter(array &$suggestions, array $variables)
+{
+  // Block suggestions for custom block bundles.
+  if (isset($variables['elements']['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
+  }
+}
+
+function xtrax_theme_suggestions_form_alter(array &$suggestions, array $variables)
+{
+  if (isset($variables['element']['#form_id'])) {
+    $suggestions[] = 'form__bundle__' . $variables['element']['#form_id'];
+    if (($parameter = \Drupal::routeMatch()->getParameter('commerce_product'))) {
+      if (preg_match('/commerce_order_item_add_to_cart_form_commerce_product_' . $parameter->product_id->value . '/i', $variables['element']['#form_id'])) {
+        $suggestions[] = 'form__bundle__single_product_add_to_cart';
+      }
+    }
+  }
+}
+
+function xtrax_theme_suggestions_form_element_alter(array &$suggestions, array $variables)
+{
+  if (isset($variables['element']['#type'])) {
+    $suggestions[] = 'form_element__bundle__' . $variables['element']['#type'];
+
+    if (isset($variables['element']['#xtrax_comment'])) {
+      $suggestions[] = 'form_element__bundle__' . $variables['element']['#type'] . '__' . $variables['element']['#xtrax_comment'];
+    }
+    if (isset($variables['element']['#xtrax_newsletter'])) {
+      $suggestions[] = 'form_element__bundle__' . $variables['element']['#type'] . '__' . $variables['element']['#xtrax_newsletter'];
+    }
+
+    if (isset($variables['element']['#xtrax_contact'])) {
+      $suggestions[] = 'form_element__bundle__' . $variables['element']['#type'] . '__' . $variables['element']['#xtrax_contact'];
+    }
+    if (isset($variables['element']['#xtrax_login'])) {
+      $suggestions[] = 'form_element__bundle__' . $variables['element']['#type'] . '__' . $variables['element']['#xtrax_login'];
+    }
+  }
+}
+
+function xtrax_theme_suggestions_input_alter(array &$suggestions, array $variables)
+{
+  if (isset($variables['element']['#type'])) {
+    $suggestions[] = 'input__bundle__' . $variables['element']['#type'];
+    if ($variables['element']['#type'] == 'submit' && isset($variables['element']['#xtrax_submit_id'])) {
+      $suggestions[] = 'input__bundle__' . $variables['element']['#type'] . '__' . $variables['element']['#xtrax_submit_id'];
+    }
+    if (isset($variables['element']['#xtrax_comment'])) {
+      $suggestions[] = 'input__bundle__' . $variables['element']['#type'] . '__' . $variables['element']['#xtrax_comment'];
+    }
+    if (isset($variables['element']['#xtrax_newsletter'])) {
+      $suggestions[] = 'input__bundle__' . $variables['element']['#type'] . '__' . $variables['element']['#xtrax_newsletter'];
+    }
+    if (isset($variables['element']['#xtrax_contact'])) {
+      $suggestions[] = 'input__bundle__' . $variables['element']['#type'] . '__' . $variables['element']['#xtrax_contact'];
+    }
+    if (isset($variables['element']['#xtrax_product'])) {
+      $suggestions[] = 'input__bundle__' . $variables['element']['#type'] . '__' . $variables['element']['#xtrax_product'];
+      if (($parameter = \Drupal::routeMatch()->getParameter('commerce_product'))) {
+
+        //$product = \Drupal\commerce_product\Entity\Product::load((int) $parameter->id());
+        $suggestions[] = 'input__bundle__' . $variables['element']['#type'] . '__' . $variables['element']['#xtrax_product'] . '__single';
+      }
+    }
+    if (isset($variables['element']['#xtrax_login'])) {
+      $suggestions[] = 'input__bundle__' . $variables['element']['#type'] . '__' . $variables['element']['#xtrax_login'];
+    }
+  }
+}
+
+function xtrax_form_search_block_form_alter(&$form, &$form_state)
+{
+  $form['actions']['submit']['#xtrax_submit_id'] = 'sidebar_search_submit';
+}
+
+function xtrax_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+  if ($form_id == 'comment_comment_form') {
+    $form['actions']['submit']['#xtrax_comment'] = 'comment_submit';
+    $form['field_first_name']['widget']['0']['value']['#xtrax_comment'] = 'comment_first_name';
+    $form['field_email']['widget']['0']['value']['#xtrax_comment'] = 'comment_email';
+    $form['field_comment_body']['widget']['0']['value']['#xtrax_comment'] = 'comment_body';
+    unset($form['actions']['preview']);
+  }
+  if ($form_id == 'comment_product_review_form') {
+    $form['actions']['submit']['#xtrax_comment'] = 'product_comment_submit';
+    $form['field_first_name']['widget']['0']['value']['#xtrax_comment'] = 'comment_first_name';
+    $form['field_email']['widget']['0']['value']['#xtrax_comment'] = 'comment_email';
+    $form['field_comment_body']['widget']['0']['value']['#xtrax_comment'] = 'comment_body';
+    unset($form['actions']['preview']);
+  }
+  if (preg_match('/commerce_order_item_add_to_cart_form/i', $form_id)) {
+    $form['actions']['submit']['#xtrax_product'] = 'add_to_cart_btn';
+    if (($parameter = \Drupal::routeMatch()->getParameter('commerce_product'))) {
+      if (preg_match('/commerce_order_item_add_to_cart_form_commerce_product_' . $parameter->product_id->value . '/i', $form_id)) {
+        $form['quantity']['widget']['0']['value']['#xtrax_product'] = 'quantity_single_product';
+        $form['actions']['submit']['#xtrax_product'] = 'add_to_cart_btn_single';
+      }
+      if (!preg_match('/commerce_order_item_add_to_cart_form_commerce_product_' . $parameter->product_id->value . '/i', $form_id)) {
+        unset($form['quantity']);
+      }
+    } else {
+      unset($form['quantity']);
+    }
+  }
+  if ($form_id == 'newslettersignup_form') {
+    $form['submit']['#xtrax_newsletter'] = 'newsletter_submit';
+    $form['newsletteryourname']['#xtrax_newsletter'] = 'newsletter_yourname';
+    $form['newslettercompanyname']['#xtrax_newsletter'] = 'newsletter_companyname';
+    $form['newsletteryouremail']['#xtrax_newsletter'] = 'newsletter_youremail';
+  }
+
+  if ($form_id == 'contact_message_feedback_form') {
+    $form['actions']['submit']['#xtrax_contact'] = 'contact_submit';
+    $form['name']['#xtrax_contact'] = 'contact_name';
+    $form['mail']['#xtrax_contact'] = 'contact_mail';
+    $form['message']['widget'][0]['value']['#xtrax_contact'] = 'contact_message';
+    //kint($form['actions']);
+  }
+  if (preg_match('/user_login_form/i', $form_id)) {
+    //kint($form['submit']);
+    $form['actions']['submit']['#xtrax_login'] = 'login_submit';
+    $form['name']['#xtrax_login'] = 'login_name';
+    $form['pass']['#xtrax_login'] = 'login_pass';
+  }
+}
+
+function xtrax_theme_suggestions_textarea_alter(array &$suggestions, array $variables)
+{
+  if (isset($variables['element']['#type'])) {
+    if (isset($variables['element']['#xtrax_comment'])) {
+      $suggestions[] = 'textarea__bundle__' . $variables['element']['#type'] . '__' . $variables['element']['#xtrax_comment'];
+    }
+    if (isset($variables['element']['#xtrax_contact'])) {
+      $suggestions[] = 'textarea__bundle__' . $variables['element']['#type'] . '__' . $variables['element']['#xtrax_contact'];
+    }
+  }
+
+}
+
+function xtrax_library_info_build()
+{
+  $libraries = [];
+  $js_path = 'https://maps.googleapis.com/maps/api/js?key=' . theme_get_setting('google_api_key', 'xtrax');
+  $libraries['external.bc.js'] = [
+    'version' => 'VERSION',
+    'js' => [
+      $js_path => ['type' => 'external', 'minified' => TRUE],
+      'js/map.js' => []
+    ],
+  ];
+
+  return $libraries;
+}

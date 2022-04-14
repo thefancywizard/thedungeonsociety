@@ -1,0 +1,33 @@
+{% include "@xtrax/header/header-1.html.twig" %}
+<section id="main-banner-page" class="position-relative page-header about-header parallax section-nav-smooth" style="background-image: url({{ theme_path ~ '/images/bg-about-header.jpg' }}); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center -153.9px;">
+  <div class="overlay overlay-dark opacity-6"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+        <div class="page-titles whitecolor text-center padding_top padding_bottom">
+          <h2 class="font-xlight">{{ current_title }}</h2>
+        </div>
+      </div>
+    </div>
+    {{ page.breadcrumbs }}
+  </div>
+</section>
+<section id="sign-in" class="bglight position-relative padding">
+  <div class="container">
+    {{ page.highlighted }}
+    <div class="row">
+      <div class="col-lg-6 pr-lg-0 col-md-12 d-none d-lg-flex">
+        <div class=" image login-image h-100">
+          <img src="{{ theme_path ~ '/images/login-section.jpg' }}" alt="" class="w-100 h-100">
+        </div>
+      </div>
+      <div class="col-lg-6 pl-lg-0 col-md-12 whitebox">
+        <div class="widget logincontainer">
+          <h3 class="darkcolor bottom30 text-center text-lg-left">{{ 'Log In'|t }} </h3>
+          {{ page.content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% include "@xtrax/footer/footer-1.html.twig" %}

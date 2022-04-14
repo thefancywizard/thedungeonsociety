@@ -1,0 +1,32 @@
+uuid: 2004186a-7088-458b-b0ce-61a0278666f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group._xtrax_blog
+  content:
+    - 'block_content:basic:866b8c49-8cdf-4b83-ad10-4dbbb0c86496'
+  module:
+    - block_content
+    - block_visibility_groups
+  theme:
+    - xtrax
+id: xtraxblockinsideheaderbackgroundbloglistingdescription
+theme: xtrax
+region: inside_header_background
+weight: 0
+provider: null
+plugin: 'block_content:866b8c49-8cdf-4b83-ad10-4dbbb0c86496'
+settings:
+  id: 'block_content:866b8c49-8cdf-4b83-ad10-4dbbb0c86496'
+  label: '[Xtrax] Block inside header background - Blog listing description'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: _xtrax_blog

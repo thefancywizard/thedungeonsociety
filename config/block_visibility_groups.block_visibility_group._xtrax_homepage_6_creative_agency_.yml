@@ -1,0 +1,17 @@
+uuid: 13be9317-c16b-43d2-8d54-e7a19db31486
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_homepage_6_creative_agency_
+label: '[Xtrax] Homepage 6 (Creative Agency)'
+logic: and
+conditions:
+  013a2e5b-78cf-4d2a-b4e0-c8be41b75e4c:
+    id: request_path
+    negate: false
+    uuid: 013a2e5b-78cf-4d2a-b4e0-c8be41b75e4c
+    context_mapping: {  }
+    pages: /node/70
+allow_other_conditions: false

@@ -1,0 +1,58 @@
+{% if page %}
+  <div class="news_item shadow">
+    <div class="image">
+      {% set image_uri = node.field_image.entity.uri.value %}
+      {% set image_alt = node.field_image.entity.alt.value %}
+      <img src="{{ getUrlByImageStyle(image_uri, 'image_930x540') }}" alt="{{ node.title.value }}" class="img-responsive">
+    </div>
+    <div class="news_desc text-center text-md-left">
+      <h3 class="text-capitalize font-normal darkcolor"><a href="{{ url }}">{{ node.title.value }}</a></h3>
+      <ul class="meta-tags top20 bottom20">
+        <li><a href="javascript:void(0)"><i class="fas fa-calendar-alt"></i>{{ node.created.value|date('M d') }}</a></li>
+        <li>{{ author_name }}</li>
+        <li><a href="javascript:void(0)"><i class="far fa-comment-dots"></i>{{ comment_count }}</a></li>
+      </ul>
+      <div id="blog-content">
+        {{ content.body }}
+      </div>
+      {{ content.field_blog_comments }}
+    </div>
+  </div>
+{% else %}
+  {% if blog_listing_style == 'layout_33' %}
+    <article class="blog-item cbp-item heading_space wow fadeIn text-center text-md-left" data-wow-delay="300ms">
+      {% set image_uri = node.field_image.entity.uri.value %}
+      {% set image_alt = node.field_image.entity.alt.value %}
+      <div class="image"><img src="{{ getUrlByImageStyle(image_uri, 'image_690x300') }}" alt="{{ node.title.value }}" class="border_radius"></div>
+      <h3 class="darkcolor font-light bottom10 top30"> <a href="{{ url }}">{{ node.title.value }}</a></h3>
+      <ul class="commment">
+        <li><a href="javascript:void(0)"><i class="fas fa-calendar"></i> {{ node.created.value|date('M d') }}</a></li>
+        <li><a href="javascript:void(0)"><i class="fas fa-comments"></i> {{ comment_count }}</a></li>
+        <li>{{ author_name }}</li>
+      </ul>
+      <p class="top15">{% if node.body.summary %}{{ node.body.summary|length > 200 ? node.body.summary|slice(0,200) ~ '...' : node.body.summary }}{% endif %}</p>
+      <a class=" button btn-primary" href="{{ url }}">Read More</a>
+    </article>
+  {% elseif blog_listing_style == 'layout_2' %}
+    <div class="cbp-item">
+      <div class="news_item shadow text-center text-md-left">
+        <a class="image" href="{{ url }}">
+          {% set image_uri = node.field_image.entity.uri.value %}
+          {% set image_alt = node.field_image.entity.alt.value %}
+          <img src="{{ getUrlByImageStyle(image_uri, 'image_690x400') }}" alt="{{ node.title.value }}" class="img-responsive">
+        </a>
+        <div class="news_desc">
+          <h3 class="text-capitalize font-normal darkcolor"><a href="{{ url }}">{{ node.title.value }}</a></h3>
+          <ul class="meta-tags top20 bottom20">
+            <li><a href="javascript:void(0)"><i class="fas fa-calendar-alt"></i>{{ node.created.value|date('M d') }}</a></li>
+            <li>{{ author_name }}</li>
+            <li><a href="javascript:void(0)"><i class="far fa-comment-dots"></i>{{ comment_count }}</a></li>
+          </ul>
+          <p class="bottom35">{% if node.body.summary %}{{ node.body.summary|length > 151 ? node.body.summary|slice(0,151) ~ '...' : node.body.summary }}{% endif %}</p>
+          <a href="{{ url }}" class="button gradient-btn">{{ 'Read more'|t }}</a>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endif %}
+

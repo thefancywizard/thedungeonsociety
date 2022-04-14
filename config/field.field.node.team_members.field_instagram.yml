@@ -1,0 +1,19 @@
+uuid: 9366e693-6afc-47ec-ad42-a411c22a5ebf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_instagram
+    - node.type.team_members
+id: node.team_members.field_instagram
+field_name: field_instagram
+entity_type: node
+bundle: team_members
+label: Instagram
+description: 'Instagram profile url'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

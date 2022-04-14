@@ -1,0 +1,22 @@
+uuid: 1805d07f-03fb-4e95-b8e5-01898f50ed3b
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - xtrax
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: xtrax_help
+theme: xtrax
+region: hidden
+weight: -2
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

@@ -1,0 +1,39 @@
+uuid: 44d2608b-1607-47c0-bb19-268522ad001b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group._xtrax_homepage_8_flat_
+  content:
+    - 'block_content:basic:0059eb6d-3190-485c-b7bc-60e46080e9fc'
+  module:
+    - block_class
+    - block_content
+    - block_id
+    - block_visibility_groups
+  theme:
+    - xtrax
+third_party_settings:
+  block_class:
+    classes: 'single-feature padding'
+  block_id:
+    id: our-feature
+id: xtraxsectioncontentfeature1_8
+theme: xtrax
+region: section_content
+weight: 24
+provider: null
+plugin: 'block_content:0059eb6d-3190-485c-b7bc-60e46080e9fc'
+settings:
+  id: 'block_content:0059eb6d-3190-485c-b7bc-60e46080e9fc'
+  label: '[Xtrax] Section content - Feature 1'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: _xtrax_homepage_8_flat_

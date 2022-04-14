@@ -1,0 +1,50 @@
+global-styling:
+  version: VERSION
+  css:
+    theme:
+      css/bootstrap.min.css: {}
+      css/all.min.css: {}
+      css/animate.min.css: {}
+      css/morphext.css: {}
+      css/owl.carousel.min.css: {}
+      css/jquery.fancybox.min.css: {}
+      css/tooltipster.min.css: {}
+      css/cubeportfolio.min.css: {}
+      css/revolution/navigation.css: {}
+      css/revolution/settings.css: {}
+      css/style.css: {}
+      css/custom.css: {}
+
+global-scripts:
+  version: VERSION
+  js:
+    js/propper.min.js: {}
+    js/bootstrap.min.js: {}
+    js/jquery.appear.js: {}
+    js/owl.carousel.min.js: {}
+    js/jquery-countTo.js: {}
+    js/jquery.countdown.js: {}
+    js/parallaxie.js: {}
+    js/jquery.cubeportfolio.min.js: {}
+    js/jquery.fancybox.min.js: {}
+    js/tooltipster.min.js: {}
+    js/typed.min.js: {}
+    js/wow.js: {}
+    js/particles.min.js: {}
+    js/morphext.min.js: {}
+    js/revolution/jquery.themepunch.tools.min.js: {}
+    js/revolution/jquery.themepunch.revolution.min.js: {}
+    js/revolution/extensions/revolution.extension.actions.min.js: {}
+    js/revolution/extensions/revolution.extension.carousel.min.js: {}
+    js/revolution/extensions/revolution.extension.kenburn.min.js: {}
+    js/revolution/extensions/revolution.extension.layeranimation.min.js: {}
+    js/revolution/extensions/revolution.extension.migration.min.js: {}
+    js/revolution/extensions/revolution.extension.navigation.min.js: {}
+    js/revolution/extensions/revolution.extension.parallax.min.js: {}
+    js/revolution/extensions/revolution.extension.slideanims.min.js: {}
+    js/revolution/extensions/revolution.extension.video.min.js: {}
+    js/functions.js: {}
+    js/custom.js: {}
+  dependencies:
+    - core/jquery
+

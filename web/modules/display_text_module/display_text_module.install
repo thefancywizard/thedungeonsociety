@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the display_text_module module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function display_text_module_install() {
+  $exist = \Drupal::moduleHandler()->moduleExists('content_entity_builder');
+  if(empty($exist)) {
+    return;
+  }
+  $content_types = ['display_text'];
+  foreach($content_types as $content_type_id) {
+    //delete the content type config directly if it exist.
+    $content_type = \Drupal::entityTypeManager()->getStorage('content_type')->load($content_type_id);
+    if(!empty($content_type)) {
+      \Drupal::entityTypeManager()->getStorage('content_type')->delete([$content_type_id => $content_type]);
+    }
+  }
+  drupal_flush_all_caches();
+}

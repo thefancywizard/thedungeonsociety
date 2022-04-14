@@ -1,0 +1,38 @@
+name: Trax
+type: theme
+description: 'Drupal Magazine & Blog Theme'
+core: 8.x
+core_version_requirement: ^8 || ^9
+# Defines the base theme
+base theme: stable
+screenshot: screenshot.png
+
+# Remove unneeded stylesheets.
+#libraries-override:
+#  classy/base: false
+#  system/base: false
+libraries:
+  - xtrax/global-styling
+  - xtrax/global-scripts
+  - xtrax/external.bc.js
+regions:
+  main_menu: 'Main menu'
+  one_page_menu: 'One page menu'
+  side_menu: 'Side menu'
+  one_page_side_menu: 'One page side menu'
+  inside_menu: 'Inside menu'
+  inside_header_background: 'Inside header background'
+  breadcrumbs: 'Breadcrumbs'
+  highlighted: 'Highlighted'
+  slider: 'Slider'
+  content_full_bar: 'Content full bar'
+  content: 'Main content'
+  related_products: 'Related products'
+  sidebar: 'Sidebar'
+  section_content: 'Section content'
+  footer_top: 'Footer Top'
+  footer_1_col_1: 'Footer - Column 1'
+  footer_1_col_2: 'Footer - Column 2'
+  footer_1_col_3: 'Footer - Column 3'
+  footer_1_col_4: 'Footer - Column 4'
+  hidden: 'Hidden'

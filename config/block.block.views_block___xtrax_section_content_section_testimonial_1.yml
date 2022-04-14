@@ -1,0 +1,37 @@
+uuid: b45c8a0d-71ec-4faf-8bde-eceebb851fe9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group._xtrax_testimonial_page
+    - views.view._xtrax_section_content
+  module:
+    - block_class
+    - block_id
+    - block_visibility_groups
+    - views
+  theme:
+    - xtrax
+third_party_settings:
+  block_class:
+    classes: padding_bottom
+  block_id:
+    id: testinomila_page
+id: views_block___xtrax_section_content_section_testimonial_1
+theme: xtrax
+region: section_content
+weight: 52
+provider: null
+plugin: 'views_block:_xtrax_section_content-section_testimonial_1'
+settings:
+  id: 'views_block:_xtrax_section_content-section_testimonial_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: _xtrax_testimonial_page

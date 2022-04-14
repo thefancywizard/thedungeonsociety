@@ -1,0 +1,16 @@
+uuid: 700f72f8-b827-4f84-a0f5-f95b99288a2b
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - newslettersignup
+_core:
+  default_config_hash: _qxxCT29w_qPaNfs2VeyCpLjdQ402fV4CIEGRCTefAs
+name: 'Newsletter Signup'
+type: newsletter_signup_list
+description: 'Contains the list of newsletter signups.'
+help: 'Contains the list of newsletter signups.'
+new_revision: false
+preview_mode: 1
+display_submitted: true

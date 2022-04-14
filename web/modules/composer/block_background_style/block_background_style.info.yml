@@ -1,0 +1,11 @@
+name: 'Block Background Style'
+type: module
+description: 'Block Background Style Module adds the background image and background style to the blocks'
+core: 8.x
+package: 'Block Background'
+core_version_requirement: ^8 || ^9
+
+# Information added by Drupal.org packaging script on 2020-06-18
+version: '1.0.2'
+project: 'block_background_style'
+datestamp: 1592500400

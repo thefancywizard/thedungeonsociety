@@ -1,0 +1,8 @@
+<div class="eny_profile bottom30">
+  {{ content.links }}
+  <div class="profile_photo">{{ user_picture ? user_picture }}</div>
+  <div class="profile_text bottom0">
+    <h5 class="darkcolor"><a href="javascript:void(0)">{{ author|render|striptags }}</a></h5>
+    <p class="top10 bottom0">{{ content.field_comment_body }} </p>
+  </div>
+</div>

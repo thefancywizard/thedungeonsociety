@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+<head>
+  <title>{{ head_title|safe_join(' | ') }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head-placeholder token="{{ placeholder_token|raw }}">
+  <css-placeholder token="{{ placeholder_token|raw }}">
+  <js-placeholder token="{{ placeholder_token|raw }}">
+  {% if general_setting_tracking_code %}
+    {{ general_setting_tracking_code|t }}
+  {% endif %}
+  {% if custom_css %}
+    <style type="text/css" media="all">
+      {{ custom_css|t }}
+    </style>
+  {% endif %}
+</head>
+{% if field_home_style == 'gray' %}
+<body{{ attributes.addClass('gray-body') }}>
+{% elseif field_home_style == 'grey' %}
+<body{{ attributes.addClass('gray') }}>
+{% else %}
+<body{{ attributes }}>
+{% endif %}
+<!--PreLoader-->
+<div class="loader">
+  <div class="loader-inner">
+    <div class="cssload-loader"></div>
+  </div>
+</div>
+<!--PreLoader Ends-->
+<a href="#main-content" class="visually-hidden focusable">
+  {{ 'Skip to main content'|t }}
+</a>
+{{ page_top }}
+{{ page }}
+{{ page_bottom }}
+<js-bottom-placeholder token="{{ placeholder_token|raw }}">
+</body>
+</html>

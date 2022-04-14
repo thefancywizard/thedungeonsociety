@@ -1,0 +1,22 @@
+uuid: 89d48603-1b46-41f1-b598-728255652d3d
+langcode: en
+status: true
+dependencies:
+  theme:
+    - xtrax
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: xtrax_local_tasks
+theme: xtrax
+region: hidden
+weight: 3
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

@@ -1,0 +1,36 @@
+uuid: d22c8a1b-1004-4558-8ab4-79f7bd7fe80a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group._xtrax_pricing_page
+  content:
+    - 'block_content:basic:ee479b88-13a4-4fa5-83e6-fdec6ed5b5d2'
+  module:
+    - block_content
+    - block_id
+    - block_visibility_groups
+  theme:
+    - xtrax
+third_party_settings:
+  block_id:
+    id: pricing-page
+id: xtraxsectioncontentbestpricing
+theme: xtrax
+region: section_content
+weight: 53
+provider: null
+plugin: 'block_content:ee479b88-13a4-4fa5-83e6-fdec6ed5b5d2'
+settings:
+  id: 'block_content:ee479b88-13a4-4fa5-83e6-fdec6ed5b5d2'
+  label: '[Xtrax] Section content - Best Pricing'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: _xtrax_pricing_page

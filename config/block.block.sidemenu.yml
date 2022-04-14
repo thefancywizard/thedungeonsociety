@@ -1,0 +1,25 @@
+uuid: 607b2c00-53fd-45cf-9c98-4322620fcda7
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.side-menu
+  module:
+    - system
+  theme:
+    - xtrax
+id: sidemenu
+theme: xtrax
+region: side_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:side-menu'
+settings:
+  id: 'system_menu_block:side-menu'
+  label: 'Side menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 3
+  expand_all_items: false
+visibility: {  }

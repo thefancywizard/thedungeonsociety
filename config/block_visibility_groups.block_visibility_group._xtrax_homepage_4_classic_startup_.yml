@@ -1,0 +1,17 @@
+uuid: 26f31df8-f068-4ba0-9792-fab64485e7bc
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_homepage_4_classic_startup_
+label: '[Xtrax] Homepage 4 (Classic Startup)'
+logic: and
+conditions:
+  106d6753-4786-45aa-b75d-c3c2239e95cc:
+    id: request_path
+    negate: false
+    uuid: 106d6753-4786-45aa-b75d-c3c2239e95cc
+    context_mapping: {  }
+    pages: /node/65
+allow_other_conditions: false

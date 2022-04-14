@@ -1,0 +1,17 @@
+uuid: be48aa37-f5ec-4ef6-8872-20f4a213476c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_blog
+label: '[Xtrax] Blog'
+logic: or
+conditions:
+  6a09ea60-ce0d-48cf-a610-a81cdc6e9d78:
+    id: request_path
+    negate: false
+    uuid: 6a09ea60-ce0d-48cf-a610-a81cdc6e9d78
+    context_mapping: {  }
+    pages: /blog
+allow_other_conditions: false

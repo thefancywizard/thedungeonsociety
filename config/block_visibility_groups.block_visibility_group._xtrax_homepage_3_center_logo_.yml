@@ -1,0 +1,17 @@
+uuid: 0ae08311-587e-42ae-95e7-1a892955d505
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_homepage_3_center_logo_
+label: '[Xtrax] Homepage 3 (Center Logo)'
+logic: and
+conditions:
+  b0feb7c6-f443-44b7-a335-cbd5c7df2c83:
+    id: request_path
+    negate: false
+    uuid: b0feb7c6-f443-44b7-a335-cbd5c7df2c83
+    context_mapping: {  }
+    pages: /node/61
+allow_other_conditions: false

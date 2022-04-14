@@ -1,0 +1,18 @@
+<div class="news_item shadow">
+  <div class="owl-carousel owl-theme" id="carousel-gallery-detail">
+    {{ content.field_images }}
+  </div>
+  <div class="news_desc text-center text-md-left">
+    <h3 class="text-capitalize font-normal darkcolor"><a href="{{ url }}">{{ node.title.value }}</a></h3>
+    <ul class="meta-tags top20 bottom20">
+      <li><a href="javascript:void(0)"><i class="fas fa-calendar-alt"></i>{{ node.created.value|date('M d') }}</a></li>
+      <li>{{ author_name }}</li>
+      <li><a href="javascript:void(0)"><i class="far fa-comment-dots"></i>{{ comment_count }}</a></li>
+    </ul>
+    <div id="blog-content">
+      {{ content.body }}
+    </div>
+    {{ content.field_blog_comments }}
+  </div>
+</div>
+

@@ -1,0 +1,17 @@
+uuid: d6d265e6-a7a1-47bc-a47b-ce4a620d77db
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_homepage_11_innovative_classic_
+label: '[Xtrax] Homepage 12 (Innovative classic)'
+logic: and
+conditions:
+  b634e301-31bc-4434-96e1-dedce5f29e80:
+    id: request_path
+    negate: false
+    uuid: b634e301-31bc-4434-96e1-dedce5f29e80
+    context_mapping: {  }
+    pages: /node/89
+allow_other_conditions: false

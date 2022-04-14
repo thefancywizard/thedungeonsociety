@@ -1,0 +1,48 @@
+{% include "@xtrax/header/header-1.html.twig" %}
+<section id="main-banner-page" class="position-relative page-header parallax section-nav-smooth" style="background: url({{ blog_background_image }}) no-repeat">
+  <div class="overlay overlay-dark opacity-7 z-index-1"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="page-titles whitecolor text-center padding_top padding_bottom">
+          {{ page.inside_header_background }}
+        </div>
+      </div>
+    </div>
+    {{ page.breadcrumbs }}
+  </div>
+</section>
+{% if blog_listing_style == 'layout_2' %}
+  <section id="ourblog" class="padding purple-gradient-bg">
+    <div class="container">
+      <h2 class="d-none">{{ 'Blog'|t }}</h2>
+      {{ page.highlighted }}
+      <div class="row">
+        <div class="col-lg-8" id="blog">
+          {{ page.content }}
+        </div>
+        <div class="col-lg-4">
+          <aside class="sidebar padding-bottom">
+            {{ page.sidebar }}
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+{% else %}
+  <section id="our-blog" class="bglight padding">
+    <div class="container">
+<div>
+      {{ page.highlighted }}
+      {{ page.content }}
+</div>
+<div class="col-lg-4">
+          <aside class="sidebar padding-bottom">
+            {{ page.sidebar }}
+          </aside>
+        </div>
+    </div>
+  </section>
+{% endif %}
+{{ page.section_content }}
+{% include "@xtrax/footer/footer-1.html.twig" %}

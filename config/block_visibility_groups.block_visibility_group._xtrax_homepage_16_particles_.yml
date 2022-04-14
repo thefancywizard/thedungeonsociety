@@ -1,0 +1,17 @@
+uuid: ecc1bfef-fd88-4e21-904e-02b67b80fbf9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_homepage_16_particles_
+label: '[Xtrax] Homepage 16 (Particles)'
+logic: and
+conditions:
+  4b6ff015-18d2-4b2a-8f61-6f7b5a4ccb5d:
+    id: request_path
+    negate: false
+    uuid: 4b6ff015-18d2-4b2a-8f61-6f7b5a4ccb5d
+    context_mapping: {  }
+    pages: /node/105
+allow_other_conditions: false

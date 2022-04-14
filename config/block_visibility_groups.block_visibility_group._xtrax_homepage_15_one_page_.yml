@@ -1,0 +1,17 @@
+uuid: 92ca9603-7fb8-48a0-9d46-0adccfe8e3ec
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_homepage_15_one_page_
+label: '[Xtrax] Homepage 15 (One Page)'
+logic: and
+conditions:
+  1a6e5f3f-8559-4b5d-9bc7-892a06c47b4c:
+    id: request_path
+    negate: false
+    uuid: 1a6e5f3f-8559-4b5d-9bc7-892a06c47b4c
+    context_mapping: {  }
+    pages: /node/101
+allow_other_conditions: false

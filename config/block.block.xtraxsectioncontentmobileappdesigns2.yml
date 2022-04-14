@@ -1,0 +1,39 @@
+uuid: 73b5ab5a-f55c-42b8-88d5-854982d3497d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group._xtrax_homepage_11_innovative_
+  content:
+    - 'block_content:basic:a1a4508e-c08b-40eb-9500-8527b85a8ff0'
+  module:
+    - block_class
+    - block_content
+    - block_id
+    - block_visibility_groups
+  theme:
+    - xtrax
+third_party_settings:
+  block_class:
+    classes: padding
+  block_id:
+    id: our-apps
+id: xtraxsectioncontentmobileappdesigns2
+theme: xtrax
+region: section_content
+weight: 68
+provider: null
+plugin: 'block_content:a1a4508e-c08b-40eb-9500-8527b85a8ff0'
+settings:
+  id: 'block_content:a1a4508e-c08b-40eb-9500-8527b85a8ff0'
+  label: '[Xtrax] Section content - Mobile App Designs 2'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: _xtrax_homepage_11_innovative_

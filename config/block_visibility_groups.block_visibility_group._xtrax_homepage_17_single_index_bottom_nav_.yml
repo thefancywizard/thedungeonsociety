@@ -1,0 +1,17 @@
+uuid: 17386d69-0455-4bef-a507-33ec7fcd55cf
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_homepage_17_single_index_bottom_nav_
+label: '[Xtrax] Homepage 17 (Single index bottom Nav)'
+logic: and
+conditions:
+  efdc7b0a-29aa-4fe5-affc-dc0f621c93ad:
+    id: request_path
+    negate: false
+    uuid: efdc7b0a-29aa-4fe5-affc-dc0f621c93ad
+    context_mapping: {  }
+    pages: /node/106
+allow_other_conditions: false

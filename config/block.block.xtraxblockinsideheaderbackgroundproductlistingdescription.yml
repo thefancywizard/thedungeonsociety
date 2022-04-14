@@ -1,0 +1,32 @@
+uuid: 6897d2d4-7d12-4858-bed2-cc64ba3b608d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group._xtrax_products
+  content:
+    - 'block_content:basic:dd49feff-aed5-4e84-9db1-101c0aec24bb'
+  module:
+    - block_content
+    - block_visibility_groups
+  theme:
+    - xtrax
+id: xtraxblockinsideheaderbackgroundproductlistingdescription
+theme: xtrax
+region: inside_header_background
+weight: 0
+provider: null
+plugin: 'block_content:dd49feff-aed5-4e84-9db1-101c0aec24bb'
+settings:
+  id: 'block_content:dd49feff-aed5-4e84-9db1-101c0aec24bb'
+  label: '[Xtrax] Block inside header background - Product listing description'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: _xtrax_products

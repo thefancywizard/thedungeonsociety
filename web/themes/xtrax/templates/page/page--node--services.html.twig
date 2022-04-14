@@ -1,0 +1,24 @@
+{% include "@xtrax/header/header-1.html.twig" %}
+<section id="main-banner-page" class="position-relative page-header about-header parallax section-nav-smooth" style=" background-image: url({{ field_bg ? field_bg }}); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center -153.9px;">
+  <div class="overlay overlay-dark opacity-6"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+        <div class="page-titles whitecolor text-center padding_top padding_bottom">
+          {{ node.field_inside_background.value ? node.field_inside_background.value|raw }}
+        </div>
+      </div>
+    </div>
+    {{ page.breadcrumbs }}
+  </div>
+</section>
+<section id="our-services" class="padding bglight">
+  <div class="container">
+    {{ page.highlighted }}
+    <div class="row whitebox top15">
+      {{ page.content }}
+    </div>
+  </div>
+</section>
+{{ page.section_content }}
+{% include "@xtrax/footer/footer-1.html.twig" %}

@@ -1,0 +1,28 @@
+{% include "@xtrax/header/header-1.html.twig" %}
+<section id="main-banner-page" class="position-relative page-header about-header parallax section-nav-smooth" style="background-image: url({{ theme_path ~ '/images/bg-about-header.jpg' }}); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center -153.9px;">
+  <div class="overlay overlay-dark opacity-6"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+        <div class="page-titles whitecolor text-center padding_top padding_bottom">
+          <h2 class="font-xlight">{{ current_title }}</h2>
+        </div>
+      </div>
+    </div>
+    {{ page.breadcrumbs }}
+  </div>
+</section>
+<section id="sign-in" class="bglight position-relative padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1 whitebox">
+        {{ page.highlighted }}
+        <div class="widget logincontainer shadow text-center text-md-left">
+          <h3 class="darkcolor bottom35">{{ 'Create new account'|t }} </h3>
+          {{ page.content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% include "@xtrax/footer/footer-1.html.twig" %}

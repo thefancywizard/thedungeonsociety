@@ -1,0 +1,25 @@
+uuid: 4d67c404-2ca1-42ee-bc54-6c8e2bacc787
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:6003268f-0f26-40b6-8be7-3eff497d0ce2'
+  module:
+    - block_content
+  theme:
+    - xtrax
+id: xtraxblockinsidemenu
+theme: xtrax
+region: inside_menu
+weight: -7
+provider: null
+plugin: 'block_content:6003268f-0f26-40b6-8be7-3eff497d0ce2'
+settings:
+  id: 'block_content:6003268f-0f26-40b6-8be7-3eff497d0ce2'
+  label: '[Xtrax] Block inside menu'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

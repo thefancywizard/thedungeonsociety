@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * Theme override to display a pager.
+ *
+ * Available variables:
+ * - items: List of pager items.
+ *   The list is keyed by the following elements:
+ *   - first: Item for the first page; not present on the first page of results.
+ *   - previous: Item for the previous page; not present on the first page
+ *     of results.
+ *   - next: Item for the next page; not present on the last page of results.
+ *   - last: Item for the last page; not present on the last page of results.
+ *   - pages: List of pages, keyed by page number.
+ *   Sub-sub elements:
+ *   items.first, items.previous, items.next, items.last, and each item inside
+ *   items.pages contain the following elements:
+ *   - href: URL with appropriate query parameters for the item.
+ *   - attributes: A keyed list of HTML attributes for the item.
+ *   - text: The visible text used for the item link, such as "‹ Previous"
+ *     or "Next ›".
+ * - current: The page number of the current page.
+ * - ellipses: If there are more pages than the quantity allows, then an
+ *   ellipsis before or after the listed pages may be present.
+ *   - previous: Present if the currently visible list of pages does not start
+ *     at the first page.
+ *   - next: Present if the visible list of pages ends before the last page.
+ *
+ * @see template_preprocess_pager()
+ */
+#}
+{% if items %}
+  <ul class="pagination justify-content-center top40">
+    {% if items.previous %}
+      <li class="page-item"><a class="page-link" href="{{ items.previous.href }}"><i class="fa fa-angle-left"></i></a></li>
+    {% endif %}
+    {# Add an ellipsis if there are further previous pages. #}
+    {% if ellipses.previous %}
+      <li class="page-item"><a class="page-link" href="{{ items.previous.href }}">&hellip;</a></li>
+    {% endif %}
+    {% for key, item in items.pages %}
+      <li class="page-item{{ current == key ? ' active' : '' }}"><a class="page-link" href="{{ item.href }}">{{- key -}}</a></li>
+    {% endfor %}
+    {# Add an ellipsis if there are further next pages. #}
+    {% if ellipses.next %}
+      <li class="page-item"><a class="page-link" href="{{ items.next.href }}">&hellip;</a></li>
+    {% endif %}
+    {% if items.next %}
+      <li class="page-item"><a class="page-link" href="{{ items.next.href }}"><i class="fa fa-angle-right"></i></a></li>
+    {% endif %}
+  </ul>
+{% endif %}

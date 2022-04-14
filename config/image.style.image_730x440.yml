@@ -1,0 +1,15 @@
+uuid: 0c681a35-e7ea-479c-a727-e61b6891f3c3
+langcode: en
+status: true
+dependencies: {  }
+name: image_730x440
+label: 'image 730x440'
+effects:
+  afff4bf5-fdb0-4a22-bb6d-f7818f346304:
+    uuid: afff4bf5-fdb0-4a22-bb6d-f7818f346304
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 730
+      height: 440
+      anchor: center-center

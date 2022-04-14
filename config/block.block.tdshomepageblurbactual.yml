@@ -1,0 +1,39 @@
+uuid: 13e5f2a6-1e8a-4535-afe9-6e75d905d2c5
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:0059eb6d-3190-485c-b7bc-60e46080e9fc'
+  module:
+    - block_content
+    - block_id
+    - block_visibility_groups
+    - system
+  theme:
+    - xtrax
+third_party_settings:
+  block_id:
+    id: our-feature
+id: tdshomepageblurbactual
+theme: xtrax
+region: section_content
+weight: 5
+provider: null
+plugin: 'block_content:0059eb6d-3190-485c-b7bc-60e46080e9fc'
+settings:
+  id: 'block_content:0059eb6d-3190-485c-b7bc-60e46080e9fc'
+  label: 'TDS Homepage Blurb Actual'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

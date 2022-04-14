@@ -1,0 +1,24 @@
+uuid: 082b819e-7033-44c0-8e21-684b74fbcc96
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date
+    - node.type.coming_soon_page
+  module:
+    - datetime
+id: node.coming_soon_page.field_date
+field_name: field_date
+entity_type: node
+bundle: coming_soon_page
+label: Date
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

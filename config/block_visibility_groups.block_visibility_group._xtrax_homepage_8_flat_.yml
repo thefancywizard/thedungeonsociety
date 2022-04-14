@@ -1,0 +1,17 @@
+uuid: dbca14c7-bbf4-45dd-a26b-6a1a77040864
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_homepage_8_flat_
+label: '[Xtrax] Homepage 8 (Flat)'
+logic: and
+conditions:
+  07640e4f-2d33-4e6c-92a3-44037c47ce02:
+    id: request_path
+    negate: false
+    uuid: 07640e4f-2d33-4e6c-92a3-44037c47ce02
+    context_mapping: {  }
+    pages: /node/78
+allow_other_conditions: false

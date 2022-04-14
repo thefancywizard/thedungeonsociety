@@ -1,0 +1,19 @@
+uuid: 9816b1d6-1756-42aa-9940-16197eb2af15
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_instagram
+    - node.type.testimonial
+id: node.testimonial.field_instagram
+field_name: field_instagram
+entity_type: node
+bundle: testimonial
+label: Instagram
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

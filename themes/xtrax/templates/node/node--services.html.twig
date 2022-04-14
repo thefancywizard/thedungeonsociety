@@ -1,0 +1,16 @@
+<div class="col-lg-4 col-md-5">
+  {% set image_uri = node.field_feature_image.entity.uri.value %}
+  <div class="image widget bottom20">
+    <img alt="{{ node.title.value }}" src="{{ getUrlByImageStyle(image_uri, 'origin') }}"></div>
+  <div class="col-12 px-0">
+    <div class="w-100">
+      <div class="full-map short-map" id="map" data-lat="{{ node.field_lat.value }}" data-lng="{{ node.field_lng.value }}"></div>
+    </div>
+  </div>
+  <div class="widget heading_space text-center text-md-left">
+    {{ content.field_left_info }}
+  </div>
+</div>
+<div class="col-lg-8 col-md-7">
+  {{ content.body }}
+</div>

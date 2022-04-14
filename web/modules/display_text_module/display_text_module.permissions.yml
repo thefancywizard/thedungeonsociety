@@ -1,0 +1,11 @@
+
+'delete display_text entity':
+  title: 'Delete display_text entity'
+'add display_text entity':
+  title: 'Add display_text entity'
+'view display_text entity':
+  title: 'View display_text entity'
+'edit display_text entity':
+  title: 'Edit display_text entity'
+'administer display_text entity':
+  title: 'Administer display_text entity'

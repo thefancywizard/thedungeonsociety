@@ -1,0 +1,37 @@
+uuid: 0f24174e-dfc1-42f4-b115-9f0d02e47b91
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group._xtrax_about_page
+    - views.view._xtrax_section_content
+  module:
+    - block_class
+    - block_id
+    - block_visibility_groups
+    - views
+  theme:
+    - xtrax
+third_party_settings:
+  block_class:
+    classes: 'padding_top padding_bottom bglight'
+  block_id:
+    id: our-partners
+id: views_block___xtrax_section_content_section_partner_1_2
+theme: xtrax
+region: section_content
+weight: 101
+provider: null
+plugin: 'views_block:_xtrax_section_content-section_partner_1'
+settings:
+  id: 'views_block:_xtrax_section_content-section_partner_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: _xtrax_about_page

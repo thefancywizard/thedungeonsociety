@@ -1,0 +1,8 @@
+uuid: dfded8ef-7c0d-4058-9a74-bae08e31663a
+langcode: en
+status: true
+dependencies: {  }
+name: 'Gallery categories'
+vid: gallery_categories
+description: ''
+weight: 0

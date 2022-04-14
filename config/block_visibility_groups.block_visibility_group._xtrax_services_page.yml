@@ -1,0 +1,17 @@
+uuid: 826c923f-2464-46f5-8692-e8d6311144bc
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_services_page
+label: '[Xtrax] Services page'
+logic: and
+conditions:
+  5e17aa12-68d2-4396-be6f-1b3336f3fea6:
+    id: request_path
+    negate: false
+    uuid: 5e17aa12-68d2-4396-be6f-1b3336f3fea6
+    context_mapping: {  }
+    pages: /node/33
+allow_other_conditions: false

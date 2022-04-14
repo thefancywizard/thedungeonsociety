@@ -1,0 +1,17 @@
+uuid: b34e57d8-c13b-4118-b167-dc8a2ff17813
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_team_members_page
+label: '[Xtrax] Team members page'
+logic: and
+conditions:
+  c6d02262-fba8-432d-9fe4-fc89f5945619:
+    id: request_path
+    negate: false
+    uuid: c6d02262-fba8-432d-9fe4-fc89f5945619
+    context_mapping: {  }
+    pages: /node/6
+allow_other_conditions: false

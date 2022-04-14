@@ -1,0 +1,10 @@
+_core:
+  default_config_hash: _mDgbuwQ3t7kDQ29SnflkW_JdQcJXq0-n9r93jcilGE
+attribute_enable:
+  id: true
+  class: true
+  style: false
+attribute_default:
+  id: ''
+  class: ''
+  style: ''

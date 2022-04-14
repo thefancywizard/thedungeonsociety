@@ -1,0 +1,89 @@
+uuid: eb0f9a49-cb2b-47c8-8b57-66afef3b59f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.team_members.field_art_station
+    - field.field.node.team_members.field_avatar
+    - field.field.node.team_members.field_facebook
+    - field.field.node.team_members.field_field_tiktok
+    - field.field.node.team_members.field_instagram
+    - field.field.node.team_members.field_job_title
+    - field.field.node.team_members.field_twitter
+    - node.type.team_members
+  module:
+    - image
+    - user
+id: node.team_members.default
+targetEntityType: node
+bundle: team_members
+mode: default
+content:
+  extra_field_all_nodes:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_art_station:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_avatar:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_facebook:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_field_tiktok:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_instagram:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_job_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_twitter:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

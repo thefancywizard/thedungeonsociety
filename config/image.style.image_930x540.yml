@@ -1,0 +1,15 @@
+uuid: 29c9f9cd-a3a4-4a94-a907-0e5c52803ae3
+langcode: en
+status: true
+dependencies: {  }
+name: image_930x540
+label: 'image 930x540'
+effects:
+  64f08b5e-9eb9-47aa-83a3-6da7bfcd84a6:
+    uuid: 64f08b5e-9eb9-47aa-83a3-6da7bfcd84a6
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 930
+      height: 540
+      anchor: center-center

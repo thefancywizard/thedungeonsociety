@@ -1,0 +1,21 @@
+uuid: 43def109-ae8e-4bec-9644-13e0376b5eb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_padding
+    - node.type.page
+  module:
+    - options
+id: node.page.field_padding
+field_name: field_padding
+entity_type: node
+bundle: page
+label: Padding
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

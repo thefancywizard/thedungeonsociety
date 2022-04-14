@@ -1,0 +1,19 @@
+uuid: ea7b16d1-6cca-41e9-8c00-3c9476e5eecd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_art_station
+    - node.type.team_members
+id: node.team_members.field_art_station
+field_name: field_art_station
+entity_type: node
+bundle: team_members
+label: 'Art Station'
+description: 'Art Station profile url'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

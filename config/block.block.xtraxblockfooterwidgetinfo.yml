@@ -1,0 +1,30 @@
+uuid: 3eca3dfc-43a6-4634-9fb8-1f6db7e94a73
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:64432084-8b53-4865-9c57-9ffa30bc2796'
+  module:
+    - block_content
+    - block_visibility_groups
+  theme:
+    - xtrax
+id: xtraxblockfooterwidgetinfo
+theme: xtrax
+region: footer_1_col_1
+weight: 0
+provider: null
+plugin: 'block_content:64432084-8b53-4865-9c57-9ffa30bc2796'
+settings:
+  id: 'block_content:64432084-8b53-4865-9c57-9ffa30bc2796'
+  label: '[Xtrax] Block footer widget - Info'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''

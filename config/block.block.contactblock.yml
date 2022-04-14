@@ -1,0 +1,33 @@
+uuid: 789779e2-695d-43a7-b5d2-51ec964fdc51
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group._xtrax_homepage_15_one_page_
+    - contact.form.feedback
+  module:
+    - block_id
+    - block_visibility_groups
+    - contact_block
+  theme:
+    - xtrax
+third_party_settings:
+  block_id:
+    id: contact
+id: contactblock
+theme: xtrax
+region: section_content
+weight: 119
+provider: null
+plugin: contact_block
+settings:
+  id: contact_block
+  label: 'Contact block'
+  label_display: visible
+  provider: contact_block
+  contact_form: feedback
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: _xtrax_homepage_15_one_page_

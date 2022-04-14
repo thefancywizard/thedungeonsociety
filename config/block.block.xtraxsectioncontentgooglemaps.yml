@@ -1,0 +1,32 @@
+uuid: a48c93a9-5036-47d2-8003-841b3c826054
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group._xtrax_homepage_17_single_index_bottom_nav_
+  content:
+    - 'block_content:basic:496e7a5f-7077-4b5d-ad8a-6c802694e9e0'
+  module:
+    - block_content
+    - block_visibility_groups
+  theme:
+    - xtrax
+id: xtraxsectioncontentgooglemaps
+theme: xtrax
+region: section_content
+weight: 123
+provider: null
+plugin: 'block_content:496e7a5f-7077-4b5d-ad8a-6c802694e9e0'
+settings:
+  id: 'block_content:496e7a5f-7077-4b5d-ad8a-6c802694e9e0'
+  label: '[Xtrax] Section content - Google maps'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: _xtrax_homepage_17_single_index_bottom_nav_

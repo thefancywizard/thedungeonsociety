@@ -1,0 +1,23 @@
+uuid: 1db131f1-69d8-417d-86c5-a7c8cb4e7587
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.coming_soon_page.field_background_image
+    - field.field.node.coming_soon_page.field_date
+    - field.field.node.coming_soon_page.field_description
+    - node.type.coming_soon_page
+  module:
+    - user
+id: node.coming_soon_page.teaser
+targetEntityType: node
+bundle: coming_soon_page
+mode: teaser
+content: {  }
+hidden:
+  extra_field_all_nodes: true
+  field_background_image: true
+  field_date: true
+  field_description: true
+  links: true

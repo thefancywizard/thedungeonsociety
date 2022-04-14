@@ -1,0 +1,15 @@
+uuid: 180d67bd-fb4b-4f96-a657-2b979f8113ce
+langcode: en
+status: true
+dependencies: {  }
+name: image_690x300
+label: 'image 690x300'
+effects:
+  a2f55b33-e051-49de-b0be-30719d941cd2:
+    uuid: a2f55b33-e051-49de-b0be-30719d941cd2
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 690
+      height: 300
+      anchor: center-center

@@ -1,0 +1,23 @@
+uuid: ddaec276-fd76-4c07-a99c-dda389827b12
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_style
+    - node.type.homepage
+  module:
+    - options
+id: node.homepage.field_style
+field_name: field_style
+entity_type: node
+bundle: homepage
+label: Style
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

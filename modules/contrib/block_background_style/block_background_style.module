@@ -1,0 +1,114 @@
+<?php
+
+/**
+ * @file
+ * Contains block_background_style.module.
+ */
+
+use Drupal\file\Entity\File;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\block\Entity\Block;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\block\BlockInterface;
+
+/**
+ * Implements hook_help().
+ */
+function block_background_style_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the block_background_style module.
+    case 'help.page.block_background_style':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Block Background Style Module adds the background image and background style to the blocks') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+function block_background_style_block_presave(BlockInterface $entity) {
+  if (empty($entity->getThirdPartySetting('block_background_style', 'background'))) {
+    $entity->unsetThirdPartySetting('block_background_style', 'background');
+  }
+  if (empty($entity->getThirdPartySetting('block_background_style', 'background_image'))) {
+    $entity->unsetThirdPartySetting('block_background_style', 'background_image');
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function block_background_style_form_block_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (\Drupal::currentUser()->hasPermission('administer background block')) {
+
+    /** @var \Drupal\block\BlockInterface $block */
+    $block = $form_state->getFormObject()->getEntity();
+
+    // This will automatically be saved in the third party settings.
+    $form['third_party_settings']['#tree'] = TRUE;
+    $form['third_party_settings']['block_background_style']['background'] = [
+      '#type' => 'textfield',
+      '#title' => t('Background Block Color'),
+      '#description' => t('Color Code. eg: #ffffff or white'),
+      '#default_value' => $block->getThirdPartySetting('block_background_style', 'background'),
+    ];
+    $form['third_party_settings']['block_background_style']['inline_style'] = [
+      '#type' => 'textfield',
+      '#title' => t('Background Block Inline Style'),
+      '#description' => t('Add Inline css Style  eg: background:#ffffff or white'),
+      '#default_value' => $block->getThirdPartySetting('block_background_style', 'inline_style'),
+    ];
+    $form['third_party_settings']['block_background_style']['background_image'] = [
+      '#type' => 'managed_file',
+      '#upload_location' => 'public://images/',
+      '#title' => ('Block Background Image'),
+      '#description' => t("Image to show on the Block Background"),
+      '#default_value' => $block->getThirdPartySetting('block_background_style', 'background_image'),
+      '#upload_validators' => [
+        'file_validate_extensions' => ['gif png jpg jpeg'],
+        'file_validate_size' => [55600000],
+      ],
+      '#states'        => [
+        'visible'      => [
+          ':input[name="image_type"]' => ['value' => t('Upload New Image(s)')],
+        ],
+      ],
+    ];
+
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function block_background_style_preprocess_block(&$variables) {
+  if (!empty($variables['elements']['#id'])) {
+    $block = Block::load($variables['elements']['#id']);
+    $style = "";
+    $style_image = "";
+    $style_backgraund = "";
+    $inline_style = "";
+    if ($block && $background = $block->getThirdPartySetting('block_background_style', 'background')) {
+      $style_backgraund = "background-color:" . $background . ';';
+    }
+    if ($block && $imageurl = $block->getThirdPartySetting('block_background_style', 'background_image')) {
+      $file = File::load($imageurl[0]);
+      if (!empty($file)) {
+        $uri = $file->getFileUri();
+        $uri = str_replace("public://", "/sites/default/files/", $uri);
+        $style_image = 'background-image:url(' . $uri . ') ;background-origin: content-box;background-repeat: no-repeat;background-size: 100%;';
+      }
+    }
+    if ($block && $inline_style = $block->getThirdPartySetting('block_background_style', 'inline_style')) {
+      $inline_style = $inline_style;
+    }
+    $style = $style_backgraund . $style_image . $inline_style;
+    if (!empty($style)) {
+      $variables['attributes']['style'] = $style;
+    }
+  }
+}

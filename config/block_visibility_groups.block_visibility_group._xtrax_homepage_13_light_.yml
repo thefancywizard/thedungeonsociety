@@ -1,0 +1,17 @@
+uuid: 4c897e8a-9e6b-40e5-8c11-ed6951cd498b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: _xtrax_homepage_13_light_
+label: '[Xtrax] Homepage 13 (Light)'
+logic: and
+conditions:
+  65dfb024-df85-4c78-b380-8e8efd1678c8:
+    id: request_path
+    negate: false
+    uuid: 65dfb024-df85-4c78-b380-8e8efd1678c8
+    context_mapping: {  }
+    pages: /node/93
+allow_other_conditions: false

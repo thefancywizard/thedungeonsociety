@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a 'textarea' #type form element.
+ *
+ * Available variables
+ * - wrapper_attributes: A list of HTML attributes for the wrapper element.
+ * - attributes: A list of HTML attributes for the <textarea> element.
+ * - resizable: An indicator for whether the textarea is resizable.
+ * - required: An indicator for whether the textarea is required.
+ * - value: The textarea content.
+ *
+ * @see template_preprocess_textarea()
+ *
+ * @ingroup themeable
+ */
+#}
+
+
+<div class="col-md-12 col-sm-12">
+  <div class="form-group">
+    <label for="message" class="d-none"></label>
+    <textarea{{ attributes.addClass('form-control').setAttribute('placeholder', 'Message:') }}>{{ value }}</textarea>
+  </div>
+</div>

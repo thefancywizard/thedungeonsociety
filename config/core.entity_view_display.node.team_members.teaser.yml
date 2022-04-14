@@ -1,0 +1,39 @@
+uuid: cf6cd27e-7a2a-4dc8-a003-ae3cb161b469
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.team_members.field_art_station
+    - field.field.node.team_members.field_avatar
+    - field.field.node.team_members.field_facebook
+    - field.field.node.team_members.field_field_tiktok
+    - field.field.node.team_members.field_instagram
+    - field.field.node.team_members.field_job_title
+    - field.field.node.team_members.field_twitter
+    - node.type.team_members
+  module:
+    - user
+id: node.team_members.teaser
+targetEntityType: node
+bundle: team_members
+mode: teaser
+content:
+  extra_field_all_nodes:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -30
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_art_station: true
+  field_avatar: true
+  field_facebook: true
+  field_field_tiktok: true
+  field_instagram: true
+  field_job_title: true
+  field_twitter: true

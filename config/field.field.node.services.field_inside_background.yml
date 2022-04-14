@@ -1,0 +1,21 @@
+uuid: 9444d2cd-071e-4c92-ad91-6f4841c431f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_inside_background
+    - node.type.services
+  module:
+    - text
+id: node.services.field_inside_background
+field_name: field_inside_background
+entity_type: node
+bundle: services
+label: 'Inside background'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

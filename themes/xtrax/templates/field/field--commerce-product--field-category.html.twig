@@ -1,0 +1,9 @@
+{% set k = 1 %}
+{% for item in items %}
+  {% if k != items|length %}
+    {{ item.content }}{{ ', ' }}
+  {% else %}
+    {{ item.content }}
+  {% endif %}
+  {% set k = k + 1 %}
+{% endfor %}

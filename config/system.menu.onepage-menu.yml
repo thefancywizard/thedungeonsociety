@@ -1,0 +1,8 @@
+uuid: 375ba0e6-170a-430c-8018-7803ae45b460
+langcode: en
+status: true
+dependencies: {  }
+id: onepage-menu
+label: 'Onepage menu'
+description: ''
+locked: false
