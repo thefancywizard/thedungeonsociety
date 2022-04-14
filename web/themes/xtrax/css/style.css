@@ -1422,6 +1422,44 @@ section,
     display: none !important;
 }
 
+.team-content .social-icons-simple {
+    display: block !important;
+}
+
+.team-content .social-icons-simple li a {
+    color: #fff;
+}
+
+.team-box .team-member-bio {
+    position: absolute;
+    opacity: 0;
+    height: 100%;
+    top: 100%;
+    width: 100%;
+    z-index: -1;
+    padding: 15px;
+}
+
+.team-box .team-member-bio p {
+    line-height: 1.25em;
+}
+
+.team-box:hover .team-member-bio {
+    opacity: 1;
+    top: 0;
+    z-index: 1;
+    background: rgba(36,15,28,.5);
+    transition: all .5s ease-in-out;
+}
+
+.contact-meta .social-icons li a {
+    height: 65px;
+    width: 65px;
+    line-height: 62px;
+    font-size: 2em;
+    color: #fff;
+}
+
 body.path-frontpage .social-icons-simple {
     margin-top: -3px;
     display: block !important;
@@ -3926,7 +3964,7 @@ iframe {
 
 .team-content {
     padding: 2rem 1rem;
-    background: #fff;
+    background: #4B384C;
     text-align: center;
     height: 108px;
     position: relative;
@@ -3953,12 +3991,8 @@ iframe {
     -o-transform: translateY(100%);
     transform: translateY(100%);
     background-size: 200% auto;
-    background-image: -webkit-gradient(linear, left top, right top, from(#5192e1), color-stop(51%, #23ced5), to(#5192e1));
-    background-image: -webkit-linear-gradient(left, #5192e1 0%, #23ced5 51%, #5192e1 100%);
-    background-image: -moz-linear-gradient(left, #5192e1 0%, #23ced5 51%, #5192e1 100%);
-    background-image: -o-linear-gradient(left, #5192e1 0%, #23ced5 51%, #5192e1 100%);
-    background-image: linear-gradient(to right, #5192e1 0%, #23ced5 51%, #5192e1 100%);
-}
+    background: #B77729;
+    }
 
 .team-content p {
     margin-bottom: 0;
@@ -3983,13 +4017,7 @@ iframe {
     transform: translateY(0);
 }
 
-.team-content ul {
-    -webkit-transform: translateY(150%);
-    -moz-transform: translateY(150%);
-    -ms-transform: translateY(150%);
-    -o-transform: translateY(150%);
-    transform: translateY(150%);
-}
+
 
 .team-box:hover .team-content ul {
     -webkit-transform: translateY(0);
